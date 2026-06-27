@@ -1,0 +1,19 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-family: $font-tertiary, serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $font-secondary, serif;
+}
+
+a {
+    text-decoration: none;
+}

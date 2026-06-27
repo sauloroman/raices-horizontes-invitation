@@ -1,0 +1,30 @@
+@use "variables";
+
+@mixin difuminatedGradient($color: variables.$color-bg, $height: 25%, $positionY: 0, $double: false) {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: $positionY;
+        left: 0;
+        width: 100%;
+        height: $height;
+        background: linear-gradient(to top, $color 0%, transparent 100%);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    @if($double) {
+        &::before {
+            content: '';
+            position: absolute;
+            top: $positionY;
+            left: 0;
+            width: 100%;
+            height: $height;
+            background: linear-gradient(to bottom, $color 0%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+    }
+
+}

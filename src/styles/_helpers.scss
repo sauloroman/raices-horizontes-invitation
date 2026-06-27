@@ -1,0 +1,56 @@
+@use 'variables.scss';
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: $color-primary-500;
+}
+
+.text-secondary {
+    color: $color-secondary-500;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-tertiary {
+    color: $color-tertiary-500;
+}
+
+.text-neutral {
+    color: $color-neutral-500;
+}
+
+.relative-z-2 {
+    position: relative;
+    z-index: 2;
+}
+
+.mt-4 {
+    margin-top: 4rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.opacity-75 {
+    opacity: .75;
+}
+
+.color-secondary {
+    color: $color-secondary-500;
+}
+
+.color-primary {
+    color: $color-primary-800;
+}
+
+.text-strong {
+    font-weight: 800;
+    padding-bottom: .5;
+    border-bottom: 1px solid currentColor;
+}
