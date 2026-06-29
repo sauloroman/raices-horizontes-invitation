@@ -1,5 +1,19 @@
 @use 'variables.scss' as *;
 
+@font-face {
+    font-family: 'Brittany';
+    src: url('../assets/fonts/Brittany.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Halimunde';
+    src: url('../assets/fonts/Halimunde Signature.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     font-size: 62.5%;
 }
