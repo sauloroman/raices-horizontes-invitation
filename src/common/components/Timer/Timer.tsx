@@ -19,19 +19,22 @@ export const Timer: React.FC<TimerProps> = ({ targetDate }) => {
     const { days, hours, minutes, seconds } = useCountdown(targetDate)
 
     const concepts = [
-        { number: days, concept: 'Días' },
-        { number: hours, concept: 'Hrs' },
-        { number: minutes, concept: 'Min' },
-        { number: seconds, concept: 'Seg' }
+        { number: days, concept: 'D' },
+        { number: hours, concept: 'H' },
+        { number: minutes, concept: 'M' },
+        { number: seconds, concept: 'S' }
     ]
 
     return (
         <div className='timer relative-z-2'>
-            {
-                concepts.map(({ number, concept }) => (
-                    <TimerBox key={concept} number={String(number).padStart(2, '0')} concept={concept} />
-                ))
-            }
+            <span>Save the Date</span>
+            <div className='timer__items'>
+                {
+                    concepts.map(({ number, concept }) => (
+                        <TimerBox key={concept} number={String(number).padStart(2, '0')} concept={concept} />
+                    ))
+                }
+            </div>
         </div>
     )
 }

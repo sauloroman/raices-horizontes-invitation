@@ -1,10 +1,19 @@
 .timer {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
     font-family: $font-secondary;
+    background-color: rgba($color-primary-500, .7);
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+
+    span {
+        display: block;
+        text-align: center;
+        color: $color-neutral-50;
+        letter-spacing: 5px;
+    }
 
     &__box {
         display: flex;
@@ -13,19 +22,27 @@
         border-radius: .8rem;
         height: 7rem;
         width: 7rem;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.6rem;
     }
 
     &__number {
-        font-size: 3.2rem;
+        font-size: 3rem;
         letter-spacing: 2px;
-        color: $color-primary-50;
+        color: rgba($color-secondary-500, .8);
+        font-family: $font-tertiary;
     }
 
     &__concept {
-        font-size: 1rem;
+        font-size: 1.4rem;
         text-transform: uppercase;
-        color: $color-primary-200;
+        color: $color-neutral-50;
+        font-family: $font-secondary;
     }
 
 }
