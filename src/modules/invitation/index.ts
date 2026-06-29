@@ -1,3 +1,9 @@
 export { Hero } from './components/hero/Hero'
+export { Message } from './components/message/Message'
+export { Guest } from './components/guest/Guest'
+export { Locations } from './components/locations/Locations'
+export { DressCode } from './components/dress-code/DressCode'
+export { Itinerary } from './components/itinerary/Itinerary'
+export { Graduates } from './components/graduates/Graduates'
 
 export { Invitation } from './views/Invitation'
