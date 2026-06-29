@@ -1,0 +1,47 @@
+.message {
+
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -5rem;
+    padding: 8rem 0;
+    padding-top: 0;
+    padding-bottom: 6rem;
+    text-align: center;
+
+    &__line {
+        @include line(10rem, false);
+        background-color: $color-secondary-500;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+        width: 3px;
+    }
+
+    p {
+        margin: 2rem 0;
+    }
+
+    &__main {
+        font-weight: 300;
+        font-family: $font-secondary;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.01em;
+        margin-bottom: 2rem;
+    }
+
+    &__divider {
+        transform: rotate(5deg);
+        width: 40%;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+
+
+
+}
