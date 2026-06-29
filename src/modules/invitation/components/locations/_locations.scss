@@ -1,0 +1,164 @@
+.locations {
+    text-align: center;
+
+    &__header {
+        position: relative;
+        margin-bottom: 5rem;
+    }
+
+    &__header-icon {
+        margin: 0 auto;
+
+        img {
+            opacity: .6;
+            width: 7rem;
+        }
+    }
+
+    &__line {
+        @include line(10rem, false);
+        background-color: $color-secondary-500;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        margin-top: -5rem;
+    }
+
+    &__line-bottom {
+        @include line(10rem, false);
+        background-color: $color-secondary-500;
+        margin: 0 auto;
+    }
+
+    &__celebration {
+        font-family: $font-halimunde;
+        font-size: 2.4rem;
+        color: $color-secondary-500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        color: $color-secondary-500;
+        letter-spacing: 4px;
+    }
+
+    &__celebration--dot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: $color-secondary-500;
+        border-radius: 50%;
+    }
+
+    &__list {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2rem;
+    }
+
+    &__item--green {
+        background-color: $color-primary-800;
+    }
+
+    &__item--left {
+        text-align: left !important;
+
+        .locations__item-meta,
+        .locations__item-info {
+            text-align: right !important;
+        }
+
+        .locations__item-button {
+            justify-content: flex-end !important;
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__item-icon-2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            opacity: .5;
+            width: 7rem;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__item-meta {
+        text-align: left;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+
+        .locations__concept {
+            color: $color-primary-400;
+            letter-spacing: 4px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .locations__hour {
+            font-weight: 500;
+            font-family: $font-secondary;
+            color: $color-primary-500;
+            text-transform: lowercase;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__item-info {
+        text-align: left;
+        margin-bottom: 2rem;
+
+        .locations__name {
+            line-height: 1.1;
+            font-family: $font-secondary;
+            font-size: 2rem;
+            color: $color-secondary-500;
+            margin-bottom: 1rem;
+        }
+
+        .locations__location {
+            font-size: 1.8rem;
+            color: $color-neutral-500;
+        }
+
+    }
+
+    &__item-button {
+        margin: 2rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        button {
+            width: 80%;
+            font-weight: 300;
+            font-size: 1.6rem;
+            color: $color-neutral-50;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-align: center;
+            gap: 1rem;
+            background-color: rgba($color-primary-500, .7);
+
+            padding: 2.5rem 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            color: $color-neutral-50;
+            background-color: $color-primary-400;
+        }
+    }
+}
