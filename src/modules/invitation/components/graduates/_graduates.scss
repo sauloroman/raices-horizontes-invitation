@@ -1,15 +1,134 @@
 .graduates {
 
-    padding: 5rem 0;
+    padding: 4rem 0;
 
     &__badge {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 4rem;
 
         img {
-            width: 30rem;
+            width: 23rem;
+            opacity: .9;
+            filter: brightness(1.06);
         }
     }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        align-items: center;
+        background-color: $color-bg-dark;
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            color: $color-secondary-600;
+        }
+    }
+
+    &__line {
+        @include line(5rem, $color-primary-600, false);
+    }
+
+    &__main {
+        background-size: cover;
+        background-position: center;
+        background-color: rgba($color-primary-500, .4);
+        padding: 4rem 0;
+    }
+
+    &__container {
+        padding: 4rem 2rem;
+        width: 80%;
+        margin: 0 auto;
+        background-color: $color-neutral-100;
+        box-shadow: 0px 2px 4px 0px rgba($color-neutral-800, 0.4);
+        border-radius: 1rem;
+    }
+
+    &__content {
+        margin-top: 2rem;
+        padding: 3rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background-color: rgba(white, .9);
+        border-radius: 1rem;
+    }
+
+    &__subtitle {
+        font-family: $font-secondary;
+        letter-spacing: 3px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: $color-primary-600;
+    }
+
+    &__title {
+        font-family: $font-halimunde;
+        color: $color-secondary-600;
+        font-size: 3rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    &__text {
+        width: 90%;
+        margin: 0 auto;
+        font-family: $font-secondary;
+        color: $color-neutral-600;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    &__button {
+        margin-top: 2rem;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+
+
+        button {
+            width: 100%;
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: $color-secondary-600;
+            border: 1px solid rgba($color-secondary-600, .2);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-align: center;
+            gap: 1rem;
+            background-color: rgba($color-secondary-600, 0.07);
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:hover {
+            color: $color-primary-500;
+            background-color: $color-neutral-500;
+        }
+    }
+
+    &__lampara {
+        width: 30%;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
 
 }

@@ -67,9 +67,7 @@ export const Locations: React.FC = () => {
 
                 <div className="locations__content">
                     <LocationList items={items} />
-
                 </div>
-
             </div>
         </section>
     )
