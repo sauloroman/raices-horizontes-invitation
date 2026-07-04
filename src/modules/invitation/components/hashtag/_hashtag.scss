@@ -1,5 +1,7 @@
 .hashtag {
     padding: 5rem 0;
+    background-color: $color-bg;
+    position: relative;
 
     &__icon {
         display: flex;
@@ -55,8 +57,23 @@
     }
 
     &__palmera {
+        position: absolute;
+        top: -10%;
+        right: -5%;
+
         img {
+            transform: rotate(-20deg);
             width: 20rem;
+        }
+    }
+
+    &__camara {
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+
+        img {
+            width: 10rem;
         }
     }
 
