@@ -2,6 +2,7 @@ export const getEnvVariables = () => {
     const env = import.meta.env
 
     return {
+        VITE_INVITATION_DATE: env.VITE_INVITATION_DATE,
         VITE_CURCH_NAME: env.VITE_CURCH_NAME,
         VITE_CURCH_HOUR: env.VITE_CURCH_HOUR,
         VITE_CURCH_LOCATION: env.VITE_CURCH_LOCATION,
