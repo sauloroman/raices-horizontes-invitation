@@ -21,6 +21,7 @@ const filesToConvert = [
     { name: 'guest-frame.jpeg', out: 'guest-frame.png', type: 'flood', tolerance: 35, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }, { x: 100, y: 1200 }, { x: 668, y: 1200 }] },
     { name: 'dress-code-humans.jpeg', out: 'dress-code-humans.png', type: 'flood', tolerance: 30 },
     { name: 'line-balls.jpeg', out: 'line-balls.png', type: 'flood', tolerance: 30 },
+    { name: 'base-flower.jpeg', out: 'base-flower.png', type: 'flood', tolerance: 30 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {
