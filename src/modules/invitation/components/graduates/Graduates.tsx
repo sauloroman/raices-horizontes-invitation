@@ -3,7 +3,7 @@ import './_graduates.scss'
 
 import badge from '@/assets/images/badge.png'
 import { List, GraduationCapIcon } from '@phosphor-icons/react'
-import lampara from '@/assets/images/lampara.png'
+import bulbs from '@/assets/images/tendido.png'
 
 export const Graduates: React.FC = () => {
     return (
@@ -32,11 +32,10 @@ export const Graduates: React.FC = () => {
                                 Ver Graduados
                             </button>
                         </div>
-
-                        <div className="graduates__lampara">
-                            <img src={lampara} alt="Lampara de los graduados" />
-                        </div>
                     </div>
+                </div>
+                <div className="countdown__image">
+                    <img src={bulbs} alt="Golden Holding Light Bulbs" />
                 </div>
             </div>
         </section >
