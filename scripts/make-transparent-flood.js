@@ -24,7 +24,7 @@ const filesToConvert = [
     { name: 'base-flower.jpeg', out: 'base-flower.png', type: 'flood', tolerance: 30 },
     { name: 'base-flower-2.jpeg', out: 'base-flower-2.png', type: 'flood', tolerance: 30 },
     { name: 'itinerary-frame.jpeg', out: 'itinerary-frame.png', type: 'flood', tolerance: 40, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }, { x: 100, y: 1200 }, { x: 668, y: 1200 }] },
-    { name: 'bola-disco-2.jpeg', out: 'bola-disco-2.png', type: 'flood', tolerance: 30 },
+    { name: 'bola-disco-2.jpeg', out: 'bola-disco-2.png', type: 'circle', cx: 527, cy: 480.5, r: 359 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {
@@ -136,6 +136,23 @@ async function removeBackgroundThreshold(data, info, threshold) {
     }
 }
 
+async function removeBackgroundCircle(data, info, cx, cy, r) {
+    const { width, height } = info;
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const idx = (y * width + x) * 4;
+            const dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
+            if (dist > r + 1.5) {
+                data[idx + 3] = 0;
+            } else if (dist > r - 0.5) {
+                // Anti-aliasing (feather edge)
+                const factor = 1 - (dist - (r - 0.5)) / 2;
+                data[idx + 3] = Math.max(0, Math.min(255, Math.round(data[idx + 3] * factor)));
+            }
+        }
+    }
+}
+
 async function main() {
     for (const file of filesToConvert) {
         // Read from backup (high-res original) if available, otherwise direct images folder
@@ -160,6 +177,8 @@ async function main() {
                 await removeBackgroundFloodFill(data, info, file.tolerance, file.refPixel, file.extraSeeds);
             } else if (file.type === 'threshold') {
                 await removeBackgroundThreshold(data, info, file.threshold);
+            } else if (file.type === 'circle') {
+                await removeBackgroundCircle(data, info, file.cx, file.cy, file.r);
             }
 
             // Write raw data back as PNG
