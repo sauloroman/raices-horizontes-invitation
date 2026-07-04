@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -8,6 +9,14 @@ const __dirname = path.dirname(__filename);
 
 const IMAGES_DIR = path.join(__dirname, '../src/assets/images');
 const BACKUP_DIR = path.join(__dirname, '../src/assets/images-backup');
+const MANIFEST_PATH = path.join(BACKUP_DIR, '.manifest.json');
+
+// Helper to get MD5 hash of a file
+function getFileHash(filePath) {
+    if (!fs.existsSync(filePath)) return null;
+    const buffer = fs.readFileSync(filePath);
+    return crypto.createHash('md5').update(buffer).digest('hex');
+}
 
 async function optimize() {
     if (!fs.existsSync(IMAGES_DIR)) {
@@ -20,8 +29,21 @@ async function optimize() {
         console.log(`Created backup directory at: ${BACKUP_DIR}`);
     }
 
+    // Load manifest
+    let manifest = {};
+    if (fs.existsSync(MANIFEST_PATH)) {
+        try {
+            manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+        } catch (e) {
+            manifest = {};
+        }
+    }
+
     const files = fs.readdirSync(IMAGES_DIR);
     console.log(`Found ${files.length} items in images directory.`);
+
+    let updatedManifest = { ...manifest };
+    let hasChanges = false;
 
     for (const file of files) {
         const filePath = path.join(IMAGES_DIR, file);
@@ -36,17 +58,23 @@ async function optimize() {
         }
 
         const backupPath = path.join(BACKUP_DIR, file);
-        
-        // Backup the original image if not already backed up
-        if (!fs.existsSync(backupPath)) {
+        const currentHash = getFileHash(filePath);
+
+        // Check if this is a new image or has been replaced by the user
+        const isNewOriginal = !manifest[file] || manifest[file] !== currentHash;
+
+        if (isNewOriginal) {
+            // Overwrite backup with the new original file
             fs.copyFileSync(filePath, backupPath);
-            console.log(`Backed up original: ${file}`);
+            console.log(`\nNew or updated original detected: ${file}. Updating backup...`);
         } else {
-            console.log(`Backup already exists for: ${file}`);
+            // File matches manifest, meaning it's already optimized and unchanged
+            console.log(`Skipping already optimized image: ${file}`);
+            continue;
         }
 
         const backupStat = fs.statSync(backupPath);
-        console.log(`Optimizing ${file} (Original: ${(backupStat.size / (1024 * 1024)).toFixed(2)} MB, Current: ${(stat.size / (1024 * 1024)).toFixed(2)} MB)...`);
+        console.log(`Optimizing ${file} (Original: ${(backupStat.size / (1024 * 1024)).toFixed(2)} MB)...`);
 
         const tempOutPath = path.join(IMAGES_DIR, `temp-${file}`);
 
@@ -90,7 +118,11 @@ async function optimize() {
 
             const newStat = fs.statSync(filePath);
             const savings = ((1 - (newStat.size / backupStat.size)) * 100).toFixed(1);
-            console.log(`  Optimized: ${file} -> New size: ${(newStat.size / (1024 * 1024)).toFixed(2)} MB (${savings}% total reduction from original)`);
+            console.log(`  Optimized: ${file} -> New size: ${(newStat.size / (1024 * 1024)).toFixed(2)} MB (${savings}% total reduction)`);
+
+            // Store new optimized file hash in the manifest
+            updatedManifest[file] = getFileHash(filePath);
+            hasChanges = true;
 
         } catch (error) {
             console.error(`  Error optimizing ${file}:`, error);
@@ -100,7 +132,12 @@ async function optimize() {
         }
     }
 
-    console.log('Optimization complete! Original high-resolution backups can be found in src/assets/images-backup');
+    // Save manifest if there were changes
+    if (hasChanges) {
+        fs.writeFileSync(MANIFEST_PATH, JSON.stringify(updatedManifest, null, 2), 'utf8');
+    }
+
+    console.log('\nOptimization complete! Original high-resolution backups can be found in src/assets/images-backup');
 }
 
 optimize();
