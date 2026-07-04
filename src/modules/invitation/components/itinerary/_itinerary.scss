@@ -76,22 +76,27 @@
 
     &__bola {
         position: absolute;
-        bottom: -12%;
         z-index: 2;
 
         &--plateada {
+            bottom: -12%;
             left: -5%;
 
             img {
+                opacity: .9;
+                transform: rotate(20deg);
                 width: 20rem;
             }
         }
 
         &--dorada {
-            right: 5%;
+            bottom: -20%;
+            right: 0%;
 
             img {
-                width: 10rem;
+                opacity: .8;
+                transform: rotate(-20deg);
+                width: 17rem;
             }
         }
 

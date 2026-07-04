@@ -28,6 +28,7 @@ const filesToConvert = [
     { name: 'bola-disco-3.jpeg', out: 'bola-disco-3.png', type: 'circle', cx: 518, cy: 506, r: 356 },
     { name: 'palmera.jpeg', out: 'palmera.png', type: 'flood', tolerance: 30 },
     { name: 'camara.jpeg', out: 'camara.png', type: 'flood', tolerance: 30 },
+    { name: 'badge.jpeg', out: 'badge.png', type: 'flood', tolerance: 30 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {
