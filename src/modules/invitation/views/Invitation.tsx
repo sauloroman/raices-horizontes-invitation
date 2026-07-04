@@ -1,11 +1,12 @@
 import React from 'react'
-import { Guest, Hero, Message, Locations, DressCode, Itinerary, Graduates } from '..'
+import { Guest, Hero, Message, Locations, DressCode, Itinerary, Graduates, Countdown } from '..'
 
 export const Invitation: React.FC = () => {
     return (
         <div>
             <div id="invitation">
                 <div id="hero"><Hero /></div>
+                <div id="countdown"><Countdown /></div>
                 <div id="message"><Message /></div>
                 <div id="guest"><Guest /></div>
                 <div id="locations"><Locations /></div>

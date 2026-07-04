@@ -1,0 +1,20 @@
+.countdown {
+
+    background-color: $color-bg;
+    padding-top: 8rem;
+
+    &__image {
+        width: 125%;
+        margin: 0 auto;
+
+        img {
+            opacity: .9;
+            margin-top: -3rem;
+            mix-blend-mode: multiply;
+            filter: brightness(1.2);
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+}

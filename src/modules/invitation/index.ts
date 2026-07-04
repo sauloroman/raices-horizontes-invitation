@@ -1,4 +1,5 @@
 export { Hero } from './components/hero/Hero'
+export { Countdown } from './components/countdown/Countdown'
 export { Message } from './components/message/Message'
 export { Guest } from './components/guest/Guest'
 export { Locations } from './components/locations/Locations'
