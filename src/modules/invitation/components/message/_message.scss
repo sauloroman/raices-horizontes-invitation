@@ -2,11 +2,9 @@
 
     width: 90%;
     margin: 0 auto;
-    margin-top: -5rem;
-    padding: 8rem 0;
-    padding-top: 0;
-    padding-bottom: 6rem;
     text-align: center;
+    padding-bottom: 5rem;
+    margin-top: -5rem;
 
     &__line {
         @include line(10rem, false);
@@ -20,16 +18,21 @@
         margin: 2rem 0;
     }
 
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
     &__main {
         font-weight: 300;
         font-family: $font-secondary;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         line-height: 2.8rem;
     }
 
     &__text {
         font-weight: 300;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         line-height: 2.4rem;
         letter-spacing: 0.01em;
         margin-bottom: 2rem;
@@ -42,6 +45,12 @@
         margin-top: 4rem;
     }
 
-
+    &__table {
+        width: 70%;
+        margin: auto;
+        mix-blend-mode: multiply;
+        filter: brightness(1.2);
+        object-fit: cover;
+    }
 
 }
