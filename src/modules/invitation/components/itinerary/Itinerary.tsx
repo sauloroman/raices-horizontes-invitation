@@ -3,6 +3,34 @@ import './_itinerary.scss'
 import frame from '@/assets/images/itinerary-frame.png'
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 
+const itineraryItems = [
+    {
+        time: '12:00 PM',
+        title: 'Ceremonia de Graduación',
+        location: 'Teatro del Bicentenario'
+    },
+    {
+        time: '1:00 PM',
+        title: 'Coctel',
+        location: 'Jardín Botánico'
+    },
+    {
+        time: '2:00 PM',
+        title: 'Cena',
+        location: 'Salón de Fiestas'
+    },
+    {
+        time: '3:00 PM',
+        title: 'Baile',
+        location: 'Salón de Fiestas'
+    },
+    {
+        time: '4:00 PM',
+        title: 'Fin del Evento',
+        location: 'Salón de Fiestas'
+    }
+]
+
 export const Itinerary: React.FC = () => {
 
     return (
@@ -19,6 +47,18 @@ export const Itinerary: React.FC = () => {
 
                 <div className="itinerary__content">
                     <img src={frame} alt="frame" className='itinerary__frame' />
+
+                    <ul className="itinerary__list">
+                        {
+                            itineraryItems.map((item, index) => (
+                                <li key={index} className="itinerary__item">
+                                    <div className="itinerary__time">{item.time}</div>
+                                    <div className="itinerary__title">{item.title}</div>
+                                    <div className="itinerary__location">{item.location}</div>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
 
             </div>
