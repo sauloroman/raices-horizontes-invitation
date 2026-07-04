@@ -18,7 +18,7 @@ const filesToConvert = [
     { name: 'dress-code-frame.jpeg', out: 'dress-code-frame.png', type: 'threshold', threshold: 210 },
     { name: 'bola-disco.jpeg', out: 'bola-disco.png', type: 'flood', tolerance: 25 },
     { name: 'bulbs-icons.jpeg', out: 'bulbs-icons.png', type: 'flood', tolerance: 25, refPixel: { x: 10, y: 758 } },
-    { name: 'guest-frame.jpeg', out: 'guest-frame.png', type: 'flood', tolerance: 35, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }] },
+    { name: 'guest-frame.jpeg', out: 'guest-frame.png', type: 'flood', tolerance: 35, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }, { x: 100, y: 1200 }, { x: 668, y: 1200 }] },
     { name: 'dress-code-humans.jpeg', out: 'dress-code-humans.png', type: 'flood', tolerance: 30 },
 ];
 
