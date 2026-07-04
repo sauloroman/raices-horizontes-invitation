@@ -51,6 +51,7 @@ export const Galery: React.FC = () => {
 
                     <div className="galery__footer-content">
                         <p>Queremos compartir un momento para celebrar por todo lo alto</p>
+                        <span className='galery__footer-career'>Enfermería</span>
                     </div>
                 </footer>
 

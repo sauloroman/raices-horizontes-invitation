@@ -1,97 +1,26 @@
 import React from 'react'
 import './_itinerary.scss'
-import { getEnvVariables } from '../../../../common/helpers/get-env-variables'
-import {
-    Church,
-    Wine,
-    ForkKnife,
-    Disc,
-    MusicNotes,
-    Moon,
-    Heart
-} from '@phosphor-icons/react'
-import { GraduationCapIcon } from '@phosphor-icons/react'
-import icon from '@/assets/images/itinerary-icon.png'
+import frame from '@/assets/images/itinerary-frame.png'
+import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 
 export const Itinerary: React.FC = () => {
-    const {
-        VITE_CURCH_HOUR,
-        VITE_AUDIENCE_HOUR,
-        VITE_RECEPTION_HOUR
-    } = getEnvVariables()
-
-    const items = [
-        {
-            title: 'Ceremonia Religiosa',
-            time: VITE_CURCH_HOUR || '01:00 p.m.',
-            icon: <Church className="itinerary__event-icon" />
-        },
-        {
-            title: 'Entrega Papeles',
-            time: VITE_AUDIENCE_HOUR || '03:00 p.m.',
-            icon: <GraduationCapIcon className="itinerary__event-icon" />
-        },
-        {
-            title: 'Recepción',
-            time: VITE_RECEPTION_HOUR || '08:00 p.m.',
-            icon: <Wine className="itinerary__event-icon" />
-        },
-        {
-            title: 'Cena',
-            time: '09:30 p.m.',
-            icon: <ForkKnife className="itinerary__event-icon" />
-        },
-        {
-            title: 'Música DJ',
-            time: '11:00 p.m.',
-            icon: <Disc className="itinerary__event-icon" />
-        },
-        {
-            title: 'Música Banda',
-            time: '12:30 a.m.',
-            icon: <MusicNotes className="itinerary__event-icon" />
-        },
-        {
-            title: 'Fin del Evento',
-            time: '03:00 a.m.',
-            icon: <Moon className="itinerary__event-icon" />
-        }
-    ]
 
     return (
         <section className='itinerary'>
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg" className="transition duration-300 ease-in-out delay-150"><path d="M 0,600 L 0,150 C 97.04306220095694,171.444976076555 194.08612440191388,192.88995215311004 286,187 C 377.9138755980861,181.11004784688996 464.6985645933015,147.8851674641148 567,153 C 669.3014354066985,158.1148325358852 787.1196172248802,201.56937799043067 881,204 C 974.8803827751198,206.43062200956933 1044.8229665071772,167.83732057416267 1134,152 C 1223.1770334928228,136.16267942583733 1331.5885167464114,143.08133971291866 1440,150 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="#d9d4cc" fill-opacity="0.53" className="transition-all duration-300 ease-in-out delay-150 path-0"></path><path d="M 0,600 L 0,350 C 93.10047846889952,357.1004784688995 186.20095693779905,364.20095693779905 285,362 C 383.79904306220095,359.79904306220095 488.2966507177034,348.2966507177033 580,340 C 671.7033492822966,331.7033492822967 750.6124401913876,326.6124401913875 850,338 C 949.3875598086124,349.3875598086125 1069.2535885167463,377.25358851674645 1171,382 C 1272.7464114832537,386.74641148325355 1356.3732057416269,368.37320574162675 1440,350 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="#d9d4cc" fill-opacity="1" className="transition-all duration-300 ease-in-out delay-150 path-1"></path></svg>
             <div className="itinerary__container">
-                <header className="itinerary__header">
-                    <span className='itinerary__sub'>Nuestra</span>
-                    <h2 className='itinerary__title'>Graduación</h2>
-                </header>
 
-                <div className="itinerary__timeline">
-                    {items.map((item, index) => (
-                        <div key={index} className="itinerary__item">
-                            <div className="itinerary__title-col">
-                                <h4 className="itinerary__item-title">{item.title}</h4>
-                            </div>
-
-                            <div className="itinerary__marker-col">
-                                <div className="itinerary__marker-heart">
-                                    <Heart weight="fill" />
-                                </div>
-                            </div>
-
-                            <div className="itinerary__info-col">
-                                <div className="itinerary__icon-box">
-                                    {item.icon}
-                                </div>
-                                <span className="itinerary__time">{item.time}</span>
-                            </div>
-                        </div>
-                    ))}
+                <div className="itinerary__header">
+                    <SectionHeader
+                        subtitle='Itinerary'
+                        title='Programa del Evento'
+                    />
                 </div>
 
-                <div className="itinerary__box">
-                    <img src={icon} alt="Icono de hojas" className='itinerary__icon-img' />
+                <div className="itinerary__content">
+                    <img src={frame} alt="frame" className='itinerary__frame' />
                 </div>
+
             </div>
         </section>
     )

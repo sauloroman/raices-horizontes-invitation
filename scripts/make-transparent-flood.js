@@ -23,79 +23,101 @@ const filesToConvert = [
     { name: 'line-balls.jpeg', out: 'line-balls.png', type: 'flood', tolerance: 30 },
     { name: 'base-flower.jpeg', out: 'base-flower.png', type: 'flood', tolerance: 30 },
     { name: 'base-flower-2.jpeg', out: 'base-flower-2.png', type: 'flood', tolerance: 30 },
+    { name: 'itinerary-frame.jpeg', out: 'itinerary-frame.png', type: 'flood', tolerance: 40, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }, { x: 100, y: 1200 }, { x: 668, y: 1200 }] },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {
     const { width, height } = info;
     const visited = new Uint8Array(width * height);
-    const queue = [];
 
-    // Get reference background color (default to top-left corner)
-    let refR = data[0];
-    let refG = data[1];
-    let refB = data[2];
+    // Helper to perform a flood fill pass from specific starting seeds/pixels
+    function runFloodFill(seeds, defaultRefColor) {
+        const queue = [];
+        
+        function enqueue(x, y) {
+            const idx = y * width + x;
+            if (!visited[idx]) {
+                visited[idx] = 1;
+                queue.push({ x, y });
+            }
+        }
 
+        // Determine reference color
+        let refR, refG, refB;
+        if (defaultRefColor) {
+            refR = defaultRefColor.r;
+            refG = defaultRefColor.g;
+            refB = defaultRefColor.b;
+        } else {
+            // Sample from first seed point
+            const firstSeed = seeds[0];
+            const idx = (firstSeed.y * width + firstSeed.x) * 4;
+            refR = data[idx];
+            refG = data[idx + 1];
+            refB = data[idx + 2];
+        }
+
+        // Enqueue seeds
+        for (const seed of seeds) {
+            enqueue(seed.x, seed.y);
+        }
+
+        let head = 0;
+        while (head < queue.length) {
+            const { x, y } = queue[head++];
+            const pixelIdx = (y * width + x) * 4;
+            
+            const r = data[pixelIdx];
+            const g = data[pixelIdx + 1];
+            const b = data[pixelIdx + 2];
+
+            const dist = Math.sqrt((r - refR) ** 2 + (g - refG) ** 2 + (b - refB) ** 2);
+            if (dist < colorTolerance) {
+                // Make transparent
+                data[pixelIdx + 3] = 0;
+
+                // Enqueue 4-neighbors
+                if (x > 0) enqueue(x - 1, y);
+                if (x < width - 1) enqueue(x + 1, y);
+                if (y > 0) enqueue(x, y - 1);
+                if (y < height - 1) enqueue(x, y + 1);
+            }
+        }
+    }
+
+    // Pass 1: Border pixels
+    const borderSeeds = [];
+    for (let x = 0; x < width; x++) {
+        borderSeeds.push({ x, y: 0 });
+        borderSeeds.push({ x, y: height - 1 });
+    }
+    for (let y = 0; y < height; y++) {
+        borderSeeds.push({ x: 0, y });
+        borderSeeds.push({ x: width - 1, y });
+    }
+
+    let outerRefColor = null;
     if (refPixel) {
-        // Handle coordinate safety
         const rx = Math.min(Math.max(0, refPixel.x), width - 1);
         const ry = Math.min(Math.max(0, refPixel.y), height - 1);
         const refIdx = (ry * width + rx) * 4;
-        refR = data[refIdx];
-        refG = data[refIdx + 1];
-        refB = data[refIdx + 2];
+        outerRefColor = { r: data[refIdx], g: data[refIdx + 1], b: data[refIdx + 2] };
+    } else {
+        outerRefColor = { r: data[0], g: data[1], b: data[2] };
     }
 
-    console.log(`    Ref color: R=${refR}, G=${refG}, B=${refB}`);
+    console.log(`    Outer Ref color: R=${outerRefColor.r}, G=${outerRefColor.g}, B=${outerRefColor.b}`);
+    runFloodFill(borderSeeds, outerRefColor);
 
-    // Helper to calculate color distance
-    function getColorDistance(r, g, b) {
-        return Math.sqrt((r - refR) ** 2 + (g - refG) ** 2 + (b - refB) ** 2);
-    }
-
-    // Helper to add pixel to queue
-    function enqueue(x, y) {
-        const idx = y * width + x;
-        if (!visited[idx]) {
-            visited[idx] = 1;
-            queue.push({ x, y });
-        }
-    }
-
-    // Add all border pixels to start the flood fill
-    for (let x = 0; x < width; x++) {
-        enqueue(x, 0);
-        enqueue(x, height - 1);
-    }
-    for (let y = 0; y < height; y++) {
-        enqueue(0, y);
-        enqueue(width - 1, y);
-    }
-
-    // Add extra seeds (like the center of a frame)
+    // Pass 2: Extra seeds (each gets its own reference color based on its position!)
     if (extraSeeds) {
         for (const seed of extraSeeds) {
-            enqueue(seed.x, seed.y);
-        }
-    }
-
-    let head = 0;
-    while (head < queue.length) {
-        const { x, y } = queue[head++];
-        const pixelIdx = (y * width + x) * 4;
-        
-        const r = data[pixelIdx];
-        const g = data[pixelIdx + 1];
-        const b = data[pixelIdx + 2];
-
-        if (getColorDistance(r, g, b) < colorTolerance) {
-            // Make transparent
-            data[pixelIdx + 3] = 0;
-
-            // Enqueue 4-neighbors
-            if (x > 0) enqueue(x - 1, y);
-            if (x < width - 1) enqueue(x + 1, y);
-            if (y > 0) enqueue(x, y - 1);
-            if (y < height - 1) enqueue(x, y + 1);
+            const rx = Math.min(Math.max(0, seed.x), width - 1);
+            const ry = Math.min(Math.max(0, seed.y), height - 1);
+            const idx = (ry * width + rx) * 4;
+            const seedColor = { r: data[idx], g: data[idx + 1], b: data[idx + 2] };
+            console.log(`    Seed (${seed.x}, ${seed.y}) Ref color: R=${seedColor.r}, G=${seedColor.g}, B=${seedColor.b}`);
+            runFloodFill([seed], seedColor);
         }
     }
 }
