@@ -2,6 +2,7 @@
     padding: 5rem 0;
     background-color: $color-bg;
     position: relative;
+    overflow: hidden;
 
     &__icon {
         display: flex;
@@ -58,19 +59,19 @@
 
     &__palmera {
         position: absolute;
-        top: -10%;
-        right: -5%;
+        top: -5%;
+        right: 6%;
 
         img {
             transform: rotate(-20deg);
-            width: 20rem;
+            width: 15rem;
         }
     }
 
     &__camara {
         position: absolute;
-        bottom: -10%;
-        left: 0;
+        bottom: -5%;
+        left: 8%;
 
         img {
             width: 10rem;

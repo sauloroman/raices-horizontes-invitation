@@ -1,4 +1,6 @@
 .itinerary {
+    overflow: hidden;
+    position: relative;
 
     &__container {
         margin-top: -2rem;
