@@ -2,24 +2,27 @@
 
     &__container {
         margin-top: -2rem;
-        background-color: $color-bg-dark;
     }
 
     &__content {
+        background-color: $color-bg-dark;
         position: relative;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
     &__header {
-        margin-bottom: 3rem;
+        background-color: $color-bg-dark;
+        padding-bottom: 3rem;
     }
 
     &__frame {
         width: 90%;
         margin: 0 auto;
         opacity: .8;
+        filter: brightness(1.1)
     }
 
     &__list {
@@ -28,7 +31,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 75%;
-        height: 65%;
+        height: 60%;
         z-index: 2;
 
         display: flex;
