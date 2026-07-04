@@ -26,6 +26,7 @@ const filesToConvert = [
     { name: 'itinerary-frame.jpeg', out: 'itinerary-frame.png', type: 'flood', tolerance: 40, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }, { x: 100, y: 1200 }, { x: 668, y: 1200 }] },
     { name: 'bola-disco-2.jpeg', out: 'bola-disco-2.png', type: 'circle', cx: 518, cy: 506, r: 356 },
     { name: 'palmera.jpeg', out: 'palmera.png', type: 'flood', tolerance: 30 },
+    { name: 'camara.jpeg', out: 'camara.png', type: 'flood', tolerance: 30 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {
