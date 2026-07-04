@@ -77,8 +77,15 @@
     &__bola {
         position: absolute;
         bottom: -12%;
-        left: -5%;
         z-index: 2;
+
+        &--plateada {
+            left: -5%;
+        }
+
+        &--dorada {
+            right: 5%;
+        }
 
         img {
             width: 20rem;

@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
     return (
         <div className="hero">
             <div className="hero__video-container">
-                <video className="hero__video" src={hero} autoPlay muted loop playsInline></video>
+                <video className="hero__video" src={hero} autoPlay muted loop playsInline webkit-playsinline="true" preload="auto" disablePictureInPicture controls={false}></video>
                 <div className="hero__overlay"></div>
             </div>
 
