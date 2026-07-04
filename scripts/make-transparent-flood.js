@@ -22,6 +22,7 @@ const filesToConvert = [
     { name: 'dress-code-humans.jpeg', out: 'dress-code-humans.png', type: 'flood', tolerance: 30 },
     { name: 'line-balls.jpeg', out: 'line-balls.png', type: 'flood', tolerance: 30 },
     { name: 'base-flower.jpeg', out: 'base-flower.png', type: 'flood', tolerance: 30 },
+    { name: 'base-flower-2.jpeg', out: 'base-flower-2.png', type: 'flood', tolerance: 30 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {
