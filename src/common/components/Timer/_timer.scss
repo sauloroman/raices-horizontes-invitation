@@ -1,7 +1,6 @@
 .timer {
 
     font-family: $font-secondary;
-    background-color: rgba($color-primary-500, .7);
     padding: 2rem 2rem 1rem 2rem;
     border-radius: 1rem;
     gap: 2rem;
@@ -34,15 +33,15 @@
     &__number {
         font-size: 3rem;
         letter-spacing: 2px;
-        color: rgba($color-secondary-500, .8);
-        font-family: $font-tertiary;
+        color: rgba($color-primary-500, .8);
+        font-family: $font-primary;
     }
 
     &__concept {
         font-size: 1.4rem;
         text-transform: uppercase;
-        color: $color-neutral-50;
-        font-family: $font-secondary;
+        color: rgba($color-primary-400, .9);
+        font-family: $font-tertiary;
     }
 
 }
