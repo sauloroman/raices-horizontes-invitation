@@ -12,12 +12,12 @@
         height: 5rem;
         border-radius: 50%;
         align-items: center;
-        background-color: $color-bg-dark;
+        background-color: rgba($color-primary-400, .2);
 
         svg {
             width: 2rem;
             height: 2rem;
-            color: $color-secondary-600;
+            color: $color-primary-600;
         }
     }
 
