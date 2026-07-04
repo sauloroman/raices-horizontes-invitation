@@ -11,8 +11,6 @@
         width: 100%;
         margin: auto;
         opacity: .8;
-        mix-blend-mode: multiply;
-        filter: brightness(1.4);
         object-fit: cover;
     }
 
@@ -60,7 +58,7 @@
         font-size: 1.6rem;
         line-height: 2.4rem;
         letter-spacing: 0.01em;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         color: $color-neutral-600;
         text-align: center;
     }

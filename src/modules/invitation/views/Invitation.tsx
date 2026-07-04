@@ -1,5 +1,5 @@
 import React from 'react'
-import { Guest, Hero, Message, Locations, DressCode, Itinerary, Graduates, Countdown } from '..'
+import { Guest, Hero, Message, Locations, Countdown, DressCode } from '..'
 
 export const Invitation: React.FC = () => {
     return (
@@ -11,8 +11,8 @@ export const Invitation: React.FC = () => {
                 <div id="guest"><Guest /></div>
                 <div id="locations"><Locations /></div>
                 <div id="dress-code"><DressCode /></div>
-                <div id="itinerary"><Itinerary /></div>
-                <div id="graduates"><Graduates /></div>
+                {/* <div id="itinerary"><Itinerary /></div>
+                <div id="graduates"><Graduates /></div> */}
             </div>
         </div>
     )

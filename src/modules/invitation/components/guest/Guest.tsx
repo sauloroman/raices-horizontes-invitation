@@ -1,6 +1,6 @@
 import React from 'react'
 import './_guest.scss'
-import frame from '@/assets/images/guest-frame.jpeg'
+import frame from '@/assets/images/guest-frame.png'
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 
 export const Guest: React.FC = () => {

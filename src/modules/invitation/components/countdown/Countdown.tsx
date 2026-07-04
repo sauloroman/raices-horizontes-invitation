@@ -4,7 +4,7 @@ import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 import { getEnvVariables } from '@/common/helpers/get-env-variables'
 
 import './_countdown.scss'
-import bulbs from '@/assets/images/bulbs-icons.jpeg'
+import bulbs from '@/assets/images/bulbs-icons.png'
 
 const { VITE_INVITATION_DATE } = getEnvVariables()
 

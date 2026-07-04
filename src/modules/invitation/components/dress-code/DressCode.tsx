@@ -1,33 +1,29 @@
 import React from 'react'
 import './_dress-code.scss'
 
-import icon from '@/assets/images/dress-code-icon.png'
+import frame from '@/assets/images/dress-code-frame.png'
+import humans from '@/assets/images/dress-code-humans.png'
+import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 
 export const DressCode: React.FC = () => {
     return (
-        <section className="dress-code" id="dress-code">
+        <section className="dress-code">
             <div className="dress-code__container">
-                <header className="dress-code__header">
-                    <h3 className='dress-code__title'>Código de Vestimenta</h3>
-                </header>
+                <img className='dress-code__frame' src={frame} />
+
                 <div className="dress-code__content">
-                    <div className="dress-code__item">
-                        <div className="dress-code__item-content">
-                            <h3 className="dress-code__item-title">Hombres</h3>
-                            <p className="dress-code__item-text">Traje formal</p>
-                        </div>
-                    </div>
-                    <div className="dress-code__item">
-                        <div className="dress-code__item-content">
-                            <h3 className="dress-code__item-title">Mujeres</h3>
-                            <p className="dress-code__item-text">Vestido de gala</p>
-                        </div>
-                    </div>
-                </div>
-                <div className='dress-code__icon'>
-                    <img src={icon} alt="Icono" />
+                    <SectionHeader
+                        subtitle=''
+                        title='Codigo Vestimenta'
+                    />
+
+                    <p>Te invitamos a vestir elegante y formal para celebrar juntos</p>
+                    <p className='dress-code__men'>Hombres: <span className='dress-code__men__description'>Smoking o Traje</span></p>
+                    <p className='dress-code__women'>Mujeres: <span className='dress-code__women__description'>Vestido largo</span></p>
+
                 </div>
             </div>
+            <img className='dress-code__humans' src={humans} />
         </section>
     )
 }

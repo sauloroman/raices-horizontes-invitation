@@ -1,7 +1,7 @@
 import React from 'react'
 import './_message.scss'
 
-import table from '@/assets/images/table-icon.jpeg'
+import table from '@/assets/images/table-icon.png'
 
 export const Message: React.FC = () => {
     return (
