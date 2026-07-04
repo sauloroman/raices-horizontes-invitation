@@ -17,7 +17,7 @@ export const DressCode: React.FC = () => {
                         title='Codigo Vestimenta'
                     />
 
-                    <p>Te invitamos a vestir elegante y formal para celebrar juntos</p>
+                    <p className='dress-code__message'>Te invitamos a vestir elegante y formal para celebrar juntos</p>
                     <p className='dress-code__men'>Hombres: <span className='dress-code__men__description'>Smoking o Traje</span></p>
                     <p className='dress-code__women'>Mujeres: <span className='dress-code__women__description'>Vestido largo</span></p>
 
