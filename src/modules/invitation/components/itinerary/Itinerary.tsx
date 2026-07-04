@@ -3,7 +3,7 @@ import './_itinerary.scss'
 import frame from '@/assets/images/itinerary-frame.png'
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 import bolaDisco from '@/assets/images/bola-disco-2.png'
-import bolaDiscoDorada from '@/assets/images/bola-disco-3.jpeg'
+import bolaDiscoDorada from '@/assets/images/bola-disco-3.png'
 
 const itineraryItems = [
     {
