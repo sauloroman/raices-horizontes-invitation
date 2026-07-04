@@ -24,7 +24,7 @@ const filesToConvert = [
     { name: 'base-flower.jpeg', out: 'base-flower.png', type: 'flood', tolerance: 30 },
     { name: 'base-flower-2.jpeg', out: 'base-flower-2.png', type: 'flood', tolerance: 30 },
     { name: 'itinerary-frame.jpeg', out: 'itinerary-frame.png', type: 'flood', tolerance: 40, extraSeeds: [{ x: 384, y: 688 }, { x: 384, y: 1200 }, { x: 100, y: 1200 }, { x: 668, y: 1200 }] },
-    { name: 'bola-disco-2.jpeg', out: 'bola-disco-2.png', type: 'circle', cx: 527, cy: 480.5, r: 359 },
+    { name: 'bola-disco-2.jpeg', out: 'bola-disco-2.png', type: 'circle', cx: 518, cy: 506, r: 356 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {

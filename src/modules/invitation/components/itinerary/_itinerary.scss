@@ -72,4 +72,15 @@
         font-style: italic;
     }
 
+    &__bola {
+        position: absolute;
+        bottom: -12%;
+        left: -5%;
+        z-index: 2;
+
+        img {
+            width: 20rem;
+        }
+    }
+
 }
