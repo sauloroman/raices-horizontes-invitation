@@ -6,5 +6,6 @@ export { Locations } from './components/locations/Locations'
 export { DressCode } from './components/dress-code/DressCode'
 export { Itinerary } from './components/itinerary/Itinerary'
 export { Graduates } from './components/graduates/Graduates'
+export { Galery } from './components/galery/Galery'
 
 export { Invitation } from './views/Invitation'
