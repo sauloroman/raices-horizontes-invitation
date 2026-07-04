@@ -41,7 +41,7 @@ export const Itinerary: React.FC = () => {
 
                 <div className="itinerary__header">
                     <SectionHeader
-                        subtitle='Itinerary'
+                        subtitle='Itinerario'
                         title='Programa del Evento'
                     />
                 </div>

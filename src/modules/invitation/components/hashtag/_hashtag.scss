@@ -1,0 +1,63 @@
+.hashtag {
+    padding: 5rem 0;
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        align-items: center;
+        background-color: $color-bg-dark;
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            color: $color-secondary-600;
+        }
+    }
+
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: white;
+        box-shadow: 0px 2px 4px 0px rgba($color-neutral-800, 0.4);
+        padding: 2rem;
+        border-radius: 1rem;
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__text {
+        color: $color-neutral-600;
+        width: 60%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__name {
+        padding: .5rem 2rem;
+        border-radius: 1rem;
+        background-color: rgba($color-secondary-500, .2);
+        font-family: $font-halimunde;
+        font-size: 2.4rem;
+        color: $color-secondary-600;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    &__palmera {
+        img {
+            width: 20rem;
+        }
+    }
+
+}
