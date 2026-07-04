@@ -1,90 +1,68 @@
 .guest {
-    padding: 6rem 2rem;
-    background-color: $color-neutral-400;
+    padding: 1rem;
+    background-color: $color-bg-dark;
 
     &__container {
-        border-top-right-radius: 2rem;
-        border-top-left-radius: 2rem;
-        background-color: rgba($color-primary-500, .7);
-        border: 1px solid $color-primary-400;
         color: $color-neutral-50;
         position: relative;
+    }
+
+    &__frame {
+        width: 100%;
+        margin: auto;
+        opacity: .8;
+        mix-blend-mode: multiply;
+        filter: brightness(1.4);
+        object-fit: cover;
     }
 
     &__content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        padding: 3rem 5rem;
-        position: relative;
-        box-shadow: 0 8px 15px rgba($color-primary-500, .3);
-    }
-
-    &__icon-box {
-        width: 15rem;
-        height: 15rem;
+        width: 55%;
         position: absolute;
-        bottom: 0;
-        left: -5%;
-        opacity: .3;
+        top: 15%;
+        left: 50%;
         z-index: 2;
+        transform: translateX(-50%);
     }
 
-    &__icon {
-        color: $color-secondary-500;
-        font-size: 2.4rem;
+    &__header {
+        span {
+            color: $color-neutral-700 !important;
+        }
+
         margin-bottom: 2rem;
-    }
-
-    &__title {
-        font-size: 3.6rem;
-        text-align: center;
-        font-weight: 500;
-        font-family: $font-halimunde;
-        line-height: 1.3;
-        letter-spacing: .05em;
-        margin-bottom: .8rem;
-    }
-
-    &__honor {
-        font-size: 1.3rem;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        margin: 1rem 0;
-        color: $color-secondary-500;
     }
 
     &__name {
-        font-family: $font-tertiary;
-        font-size: 3.2rem;
-        font-weight: 300;
-        line-height: 1.2;
-        letter-spacing: 3px;
         text-align: center;
-        color: $color-neutral-50;
-        margin-bottom: 1rem;
-    }
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-bottom: 3rem;
 
-    &__divider {
-        height: 1px;
-        width: 60%;
-        background-color: $color-secondary-500;
-        opacity: .4;
-        margin-bottom: 2rem;
+        p {
+            color: $color-neutral-700;
+            font-family: $font-secondary;
+            margin-bottom: 1.2rem;
+        }
+
+        span {
+            display: inline-block;
+            color: $color-secondary-600;
+            font-family: $font-halimunde;
+            font-size: 2.4rem;
+            line-height: 1.7;
+        }
     }
 
     &__message {
-        width: 100%;
-        font-size: 1.8rem;
-        line-height: 1.7;
-        letter-spacing: .01em;
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.01em;
+        margin-bottom: 4rem;
+        color: $color-neutral-600;
         text-align: center;
-        color: $color-neutral-400;
-        margin: 2rem 0;
     }
 
     &__button {
@@ -95,10 +73,10 @@
 
 
         button {
-            width: 80%;
-            font-weight: 300;
-            font-size: 1.6rem;
-            color: $color-secondary-500;
+            width: 100%;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: $color-neutral-600;
             border: 1px solid currentColor;
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -112,7 +90,7 @@
 
         button:hover {
             color: $color-primary-500;
-            background-color: $color-secondary-500;
+            background-color: $color-neutral-500;
         }
     }
 
