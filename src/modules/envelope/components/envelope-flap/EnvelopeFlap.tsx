@@ -36,15 +36,15 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                     <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ display: 'block' }}>
                         <SvgDefs />
                         <path 
-                            d="M 0 0 L 400 0 L 400 200 C 340 200, 300 300, 200 400 C 100 300, 60 200, 0 200 Z" 
+                            d="M 0 0 L 400 0 L 400 270 C 340 270, 300 320, 200 400 C 100 320, 60 270, 0 270 Z" 
                             fill="#2b4e32" 
                         />
                         <path 
-                            d="M 0 0 L 400 0 L 400 200 C 340 200, 300 300, 200 400 C 100 300, 60 200, 0 200 Z" 
+                            d="M 0 0 L 400 0 L 400 270 C 340 270, 300 320, 200 400 C 100 320, 60 270, 0 270 Z" 
                             fill="url(#laurel-pattern)"
                         />
                         <path 
-                            d="M 400 200 C 340 200, 300 300, 200 400 C 100 300, 60 200, 0 200" 
+                            d="M 400 270 C 340 270, 300 320, 200 400 C 100 320, 60 270, 0 270" 
                             fill="none" 
                             stroke="url(#gold-grad)" 
                             strokeWidth="3.5" 
@@ -56,15 +56,15 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                     <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ display: 'block' }}>
                         <SvgDefs />
                         <path 
-                            d="M 0 400 L 0 200 C 60 200, 100 100, 200 0 C 300 100, 340 200, 400 200 L 400 400 Z" 
+                            d="M 0 400 L 0 130 C 60 130, 100 80, 200 0 C 300 80, 340 130, 400 130 L 400 400 Z" 
                             fill="#2b4e32" 
                         />
                         <path 
-                            d="M 0 400 L 0 200 C 60 200, 100 100, 200 0 C 300 100, 340 200, 400 200 L 400 400 Z" 
+                            d="M 0 400 L 0 130 C 60 130, 100 80, 200 0 C 300 80, 340 130, 400 130 L 400 400 Z" 
                             fill="url(#laurel-pattern)"
                         />
                         <path 
-                            d="M 0 200 C 60 200, 100 100, 200 0 C 300 100, 340 200, 400 200" 
+                            d="M 0 130 C 60 130, 100 80, 200 0 C 300 80, 340 130, 400 130" 
                             fill="none" 
                             stroke="url(#gold-grad)" 
                             strokeWidth="3.5" 

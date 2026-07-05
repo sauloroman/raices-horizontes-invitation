@@ -99,7 +99,6 @@
 .envelop {
   position: relative;
   width: 100%;
-  max-width: 420px;
   height: 840px;
   max-height: 100dvh;
   overflow: hidden;
@@ -110,7 +109,7 @@
   align-items: center;
   z-index: 1;
 
-  background: linear-gradient(135deg, $color-primary-700 0%, darken($color-primary-700, 5%) 100%);
+  background: linear-gradient(135deg, $color-primary-600 0%, darken($color-primary-600, 5%) 100%);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
     0 30px 70px rgba(0, 0, 0, 0.45),
@@ -233,6 +232,7 @@
     &:active {
       transform: translateY(0) scale(0.98);
     }
+
     &__tap-to-open {
       position: absolute;
       bottom: 8%;
@@ -269,11 +269,13 @@
     opacity: 0.4;
     transform: translateX(-50%) scale(0.96);
   }
+
   50% {
     opacity: 0.9;
     transform: translateX(-50%) scale(1.04);
     text-shadow: 0 0 10px rgba(#f3e7c4, 0.3);
   }
+
   100% {
     opacity: 0.4;
     transform: translateX(-50%) scale(0.96);
