@@ -7,12 +7,10 @@ import { ScrollReveal } from '@/common/components/ScrollReveal/ScrollReveal'
 export const Guest: React.FC = () => {
     return (
         <section className='guest'>
-            <div className="guest__container">
-                <ScrollReveal direction="none" scale={0.95} duration={1.8} delay={0.1} blur={10}>
+            <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={8} scale={0.97}>
+                <div className="guest__container">
                     <img className='guest__frame' src={frame} alt="frame" />
-                </ScrollReveal>
 
-                <ScrollReveal direction="up" duration={1.6} delay={0.4} blur={5}>
                     <div className="guest__content">
 
                         <div className="guest__header">
@@ -36,8 +34,8 @@ export const Guest: React.FC = () => {
                         </div>
 
                     </div>
-                </ScrollReveal>
-            </div>
+                </div>
+            </ScrollReveal>
         </section>
     )
 }
