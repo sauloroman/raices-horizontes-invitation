@@ -55,13 +55,13 @@ export const Locations: React.FC = () => {
         <section className='locations'>
             <div className='locations__container'>
 
-                <ScrollReveal direction="none" scale={0.8} duration={1.2}>
+                <ScrollReveal direction="none" scale={0.8} duration={1.8} delay={0.1} blur={8}>
                     <div className="locations__image">
                         <img src={icon} alt="Bola Disco Plateada" />
                     </div>
                 </ScrollReveal>
 
-                <ScrollReveal direction="up" duration={1.2}>
+                <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={5}>
                     <div className="locations__header">
                         <SectionHeader
                             subtitle='Ubicaciones'
@@ -70,7 +70,7 @@ export const Locations: React.FC = () => {
                     </div>
                 </ScrollReveal>
 
-                <ScrollReveal direction="up" delay={0.2} duration={1.2}>
+                <ScrollReveal direction="up" delay={0.4} duration={1.6} scale={0.98} blur={8}>
                     <div className="locations__content">
                         <LocationList items={items} />
                     </div>

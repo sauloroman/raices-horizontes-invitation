@@ -9,7 +9,7 @@ import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 export const DressCode: React.FC = () => {
     return (
         <section className="dress-code">
-            <ScrollReveal direction="up" duration={1.2}>
+            <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={8} scale={0.97}>
                 <div className="dress-code__container">
                     <img className='dress-code__frame' src={frame} />
 
@@ -26,7 +26,7 @@ export const DressCode: React.FC = () => {
                     </div>
                 </div>
             </ScrollReveal>
-            <ScrollReveal direction="up" delay={0.2} duration={1.2}>
+            <ScrollReveal direction="up" delay={0.5} duration={1.8} blur={5}>
                 <img className='dress-code__humans' src={humans} />
             </ScrollReveal>
         </section>

@@ -9,18 +9,18 @@ import camara from '@/assets/images/camara.png'
 export const Hashtag: React.FC = () => {
     return (
         <section className='hashtag'>
-            <ScrollReveal direction="right" duration={1.2}>
+            <ScrollReveal direction="right" duration={1.8} delay={0.1} blur={5} rotate={10}>
                 <div className="hashtag__palmera">
                     <img src={palmera} alt="Palmera decorativa" />
                 </div>
             </ScrollReveal>
-            <ScrollReveal direction="left" duration={1.2}>
+            <ScrollReveal direction="left" duration={1.8} delay={0.3} blur={5} rotate={-10}>
                 <div className="hashtag__camara">
                     <img src={camara} alt="Camara fotográfica decorativa" />
                 </div>
             </ScrollReveal>
 
-            <ScrollReveal direction="up" duration={1.2} delay={0.1}>
+            <ScrollReveal direction="up" duration={1.6} delay={0.5} blur={8} scale={0.97}>
                 <div className='hashtag__container'>
                     <div className="hashtag__header">
                         <div className='hashtag__icon'>

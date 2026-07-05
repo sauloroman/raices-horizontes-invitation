@@ -12,15 +12,21 @@ const { VITE_INVITATION_DATE } = getEnvVariables()
 export const Countdown: React.FC = () => {
     return (
         <section className='countdown'>
-            <ScrollReveal direction="up" duration={1.2}>
-                <div className="countdown__container">
+            <div className="countdown__container">
+                <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={5}>
                     <SectionHeader subtitle="Save the Date" title="Cuenta Regresiva" />
+                </ScrollReveal>
+
+                <ScrollReveal direction="up" duration={1.6} delay={0.4} blur={8} scale={0.97}>
                     <Timer targetDate={VITE_INVITATION_DATE} />
+                </ScrollReveal>
+
+                <ScrollReveal direction="none" scale={0.9} duration={1.8} delay={0.6} blur={10}>
                     <div className="countdown__image">
                         <img src={bulbs} alt="Golden Holding Light Bulbs" />
                     </div>
-                </div>
-            </ScrollReveal>
+                </ScrollReveal>
+            </div>
         </section>
     )
 }
