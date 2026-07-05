@@ -1,6 +1,7 @@
 import React from 'react'
 import './_locations.scss'
 import { getEnvVariables } from '@/common/helpers/get-env-variables'
+import { ScrollReveal } from '@/common/components/ScrollReveal/ScrollReveal'
 
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 
@@ -54,20 +55,26 @@ export const Locations: React.FC = () => {
         <section className='locations'>
             <div className='locations__container'>
 
-                <div className="locations__image">
-                    <img src={icon} alt="Bola Disco Plateada" />
-                </div>
+                <ScrollReveal direction="none" scale={0.8} duration={1.2}>
+                    <div className="locations__image">
+                        <img src={icon} alt="Bola Disco Plateada" />
+                    </div>
+                </ScrollReveal>
 
-                <div className="locations__header">
-                    <SectionHeader
-                        subtitle='Ubicaciones'
-                        title="No te pierdas"
-                    />
-                </div>
+                <ScrollReveal direction="up" duration={1.2}>
+                    <div className="locations__header">
+                        <SectionHeader
+                            subtitle='Ubicaciones'
+                            title="No te pierdas"
+                        />
+                    </div>
+                </ScrollReveal>
 
-                <div className="locations__content">
-                    <LocationList items={items} />
-                </div>
+                <ScrollReveal direction="up" delay={0.2} duration={1.2}>
+                    <div className="locations__content">
+                        <LocationList items={items} />
+                    </div>
+                </ScrollReveal>
             </div>
         </section>
     )
