@@ -122,19 +122,6 @@
     transition: transform 0.8s ease, opacity 0.8s ease;
     animation: sealGlowPulse 3s infinite ease-in-out;
   }
-
-  &__seal-ring {
-    position: absolute;
-    width: 122%;
-    height: 122%;
-    top: -11%;
-    left: -11%;
-    border-radius: 50%;
-    border: 1.5px dashed rgba(#c5a059, 0.5);
-    z-index: 0;
-    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.8s ease;
-    animation: spinRing 25s infinite linear;
-  }
 }
 
 @keyframes sealGlowPulse {
