@@ -31,6 +31,7 @@ const filesToConvert = [
     { name: 'badge.jpeg', out: 'badge.png', type: 'flood', tolerance: 30 },
     { name: 'lampara.jpeg', out: 'lampara.png', type: 'flood', tolerance: 30 },
     { name: 'tendido.jpeg', out: 'tendido.png', type: 'flood', tolerance: 30 },
+    { name: 'maquina.jpeg', out: 'maquina.png', type: 'flood', tolerance: 30 },
 ];
 
 async function removeBackgroundFloodFill(data, info, colorTolerance, refPixel, extraSeeds) {

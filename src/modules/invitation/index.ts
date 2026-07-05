@@ -8,5 +8,6 @@ export { Itinerary } from './components/itinerary/Itinerary'
 export { Graduates } from './components/graduates/Graduates'
 export { Galery } from './components/galery/Galery'
 export { Hashtag } from './components/hashtag/Hashtag'
+export { Farewell } from './components/farewell/Farewell'
 
 export { Invitation } from './views/Invitation'

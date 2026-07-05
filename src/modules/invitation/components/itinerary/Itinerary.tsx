@@ -3,7 +3,6 @@ import './_itinerary.scss'
 import frame from '@/assets/images/itinerary-frame.png'
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 import bolaDisco from '@/assets/images/bola-disco-2.png'
-import bolaDiscoDorada from '@/assets/images/bola-disco-3.png'
 
 const itineraryItems = [
     {
@@ -64,9 +63,6 @@ export const Itinerary: React.FC = () => {
 
                     <div className="itinerary__bola itinerary__bola--plateada">
                         <img src={bolaDisco} alt="Bola Disco Plateada" />
-                    </div>
-                    <div className="itinerary__bola itinerary__bola--dorada">
-                        <img src={bolaDiscoDorada} alt="Bola Disco Plateada" />
                     </div>
                 </div>
                 <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg" className="transition duration-300 ease-in-out delay-150"><path d="M 0,600 L 0,150 C 78.10526315789474,116.95693779904306 156.21052631578948,83.91387559808614 244,98 C 331.7894736842105,112.08612440191386 429.2631578947369,173.30143540669854 535,204 C 640.7368421052631,234.69856459330146 754.7368421052631,234.8803827751196 862,209 C 969.2631578947369,183.1196172248804 1069.7894736842106,131.17703349282297 1165,117 C 1260.2105263157894,102.82296650717703 1350.1052631578946,126.41148325358851 1440,150 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="#d9d4cc" fill-opacity="0.53" className="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 300)"></path><path d="M 0,600 L 0,350 C 99.57894736842107,319.33014354066984 199.15789473684214,288.66028708133973 296,277 C 392.84210526315786,265.33971291866027 486.9473684210526,272.688995215311 586,301 C 685.0526315789474,329.311004784689 789.0526315789473,378.5837320574163 880,400 C 970.9473684210527,421.4162679425837 1048.842105263158,414.97607655502395 1140,402 C 1231.157894736842,389.02392344497605 1335.578947368421,369.511961722488 1440,350 L 1440,600 L 0,600 Z" stroke="none" stroke-width="0" fill="#d9d4cc" fill-opacity="1" className="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 300)"></path></svg>

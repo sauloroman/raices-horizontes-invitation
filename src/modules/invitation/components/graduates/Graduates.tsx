@@ -34,7 +34,7 @@ export const Graduates: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="countdown__image">
+                <div className="graduates__image">
                     <img src={bulbs} alt="Golden Holding Light Bulbs" />
                 </div>
             </div>
