@@ -14,7 +14,7 @@ $gold-gradient: linear-gradient(135deg, #c5a059 0%, #f3e7c4 30%, #ad8540 50%, #f
       z-index: 4;
       transform-origin: top;
       transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1), z-index 2.2s;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.16));
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
     }
 
     &--bottom {
@@ -22,7 +22,7 @@ $gold-gradient: linear-gradient(135deg, #c5a059 0%, #f3e7c4 30%, #ad8540 50%, #f
       height: 50%;
       z-index: 3;
       transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
-      filter: drop-shadow(0 -5px 10px rgba(0, 0, 0, 0.12));
+      filter: drop-shadow(0 -10px 16px rgba(0, 0, 0, 0.3));
     }
 
     &--left {
@@ -30,7 +30,7 @@ $gold-gradient: linear-gradient(135deg, #c5a059 0%, #f3e7c4 30%, #ad8540 50%, #f
       height: 100%;
       z-index: 2;
       transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
-      filter: drop-shadow(5px 0 8px rgba(0, 0, 0, 0.1));
+      filter: drop-shadow(10px 0 14px rgba(0, 0, 0, 0.25));
     }
 
     &--right {
@@ -38,7 +38,7 @@ $gold-gradient: linear-gradient(135deg, #c5a059 0%, #f3e7c4 30%, #ad8540 50%, #f
       height: 100%;
       z-index: 2;
       transition: transform 2.2s cubic-bezier(0.25, 1, 0.5, 1);
-      filter: drop-shadow(-5px 0 8px rgba(0, 0, 0, 0.1));
+      filter: drop-shadow(-10px 0 14px rgba(0, 0, 0, 0.25));
     }
 
     &--open-top {

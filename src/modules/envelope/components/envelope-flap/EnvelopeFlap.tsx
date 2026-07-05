@@ -8,13 +8,13 @@ export interface EnvelopeFlapProps {
 
 const SvgDefs: React.FC = () => (
     <defs>
-        {/* Premium gold gradient for borders */}
-        <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#c5a059" />
-            <stop offset="30%" stopColor="#f3e7c4" />
-            <stop offset="50%" stopColor="#ad8540" />
-            <stop offset="70%" stopColor="#f3e7c4" />
-            <stop offset="100%" stopColor="#b89752" />
+        {/* Premium silver gradient for borders */}
+        <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#d1d5db" />
+            <stop offset="25%" stopColor="#f9fafb" />
+            <stop offset="50%" stopColor="#9ca3af" />
+            <stop offset="75%" stopColor="#f3f4f6" />
+            <stop offset="100%" stopColor="#4b5563" />
         </linearGradient>
 
         {/* Academic laurel watermark pattern (light white-on-green overlay) */}
@@ -35,19 +35,19 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                 return (
                     <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ display: 'block' }}>
                         <SvgDefs />
-                        <path 
-                            d="M 0 0 L 400 0 L 400 270 C 340 270, 300 320, 200 400 C 100 320, 60 270, 0 270 Z" 
-                            fill="#2b4e32" 
+                        <path
+                            d="M 0 0 L 400 0 L 400 220 C 340 220, 300 320, 200 400 C 100 320, 60 220, 0 220 Z"
+                            fill="#2b4e32"
                         />
-                        <path 
-                            d="M 0 0 L 400 0 L 400 270 C 340 270, 300 320, 200 400 C 100 320, 60 270, 0 270 Z" 
+                        <path
+                            d="M 0 0 L 400 0 L 400 220 C 340 220, 300 320, 200 400 C 100 320, 60 220, 0 220 Z"
                             fill="url(#laurel-pattern)"
                         />
-                        <path 
-                            d="M 400 270 C 340 270, 300 320, 200 400 C 100 320, 60 270, 0 270" 
-                            fill="none" 
-                            stroke="url(#gold-grad)" 
-                            strokeWidth="3.5" 
+                        <path
+                            d="M 400 220 C 340 220, 300 320, 200 400 C 100 320, 60 220, 0 220"
+                            fill="none"
+                            stroke="url(#silver-grad)"
+                            strokeWidth="3.5"
                         />
                     </svg>
                 )
@@ -55,19 +55,19 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                 return (
                     <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ display: 'block' }}>
                         <SvgDefs />
-                        <path 
-                            d="M 0 400 L 0 130 C 60 130, 100 80, 200 0 C 300 80, 340 130, 400 130 L 400 400 Z" 
-                            fill="#2b4e32" 
+                        <path
+                            d="M 0 400 L 0 150 C 60 150, 100 80, 200 0 C 300 80, 340 150, 400 150 L 400 400 Z"
+                            fill="#2b4e32"
                         />
-                        <path 
-                            d="M 0 400 L 0 130 C 60 130, 100 80, 200 0 C 300 80, 340 130, 400 130 L 400 400 Z" 
+                        <path
+                            d="M 0 400 L 0 150 C 60 150, 100 80, 200 0 C 300 80, 340 150, 400 150 L 400 400 Z"
                             fill="url(#laurel-pattern)"
                         />
-                        <path 
-                            d="M 0 130 C 60 130, 100 80, 200 0 C 300 80, 340 130, 400 130" 
-                            fill="none" 
-                            stroke="url(#gold-grad)" 
-                            strokeWidth="3.5" 
+                        <path
+                            d="M 0 150 C 60 150, 100 80, 200 0 C 300 80, 340 150, 400 150"
+                            fill="none"
+                            stroke="url(#silver-grad)"
+                            strokeWidth="3.5"
                         />
                     </svg>
                 )
@@ -75,19 +75,19 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                 return (
                     <svg viewBox="0 0 400 800" width="100%" height="100%" style={{ display: 'block' }}>
                         <SvgDefs />
-                        <path 
-                            d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800 Z" 
-                            fill="#2b4e32" 
+                        <path
+                            d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800 Z"
+                            fill="#2b4e32"
                         />
-                        <path 
-                            d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800 Z" 
+                        <path
+                            d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800 Z"
                             fill="url(#laurel-pattern)"
                         />
-                        <path 
-                            d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800" 
-                            fill="none" 
-                            stroke="url(#gold-grad)" 
-                            strokeWidth="3.5" 
+                        <path
+                            d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800"
+                            fill="none"
+                            stroke="url(#silver-grad)"
+                            strokeWidth="3.5"
                         />
                     </svg>
                 )
@@ -95,19 +95,19 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                 return (
                     <svg viewBox="0 0 400 800" width="100%" height="100%" style={{ display: 'block' }}>
                         <SvgDefs />
-                        <path 
-                            d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800 Z" 
-                            fill="#2b4e32" 
+                        <path
+                            d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800 Z"
+                            fill="#2b4e32"
                         />
-                        <path 
-                            d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800 Z" 
+                        <path
+                            d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800 Z"
                             fill="url(#laurel-pattern)"
                         />
-                        <path 
-                            d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800" 
-                            fill="none" 
-                            stroke="url(#gold-grad)" 
-                            strokeWidth="3.5" 
+                        <path
+                            d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800"
+                            fill="none"
+                            stroke="url(#silver-grad)"
+                            strokeWidth="3.5"
                         />
                     </svg>
                 )
