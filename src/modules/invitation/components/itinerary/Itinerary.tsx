@@ -7,29 +7,34 @@ import bolaDisco from '@/assets/images/bola-disco-2.png'
 
 const itineraryItems = [
     {
-        time: '12:00 PM',
-        title: 'Ceremonia de Graduación',
-        location: 'Teatro del Bicentenario'
+        time: '01:00 PM',
+        title: 'Ceremonia Religiosa',
+        location: 'Parroquia de Nuestra Señora del Carmen'
     },
     {
-        time: '1:00 PM',
-        title: 'Coctel',
-        location: 'Jardín Botánico'
+        time: '03:00 PM',
+        title: 'Reconocimientos',
+        location: 'Show Business Center'
     },
     {
-        time: '2:00 PM',
+        time: '08:00 PM',
+        title: 'Recepción',
+        location: 'Salón Terraza Acacia'
+    },
+    {
+        time: '10:00 PM',
         title: 'Cena',
-        location: 'Salón de Fiestas'
+        location: 'Salón Terraza Acacia'
     },
     {
-        time: '3:00 PM',
-        title: 'Baile',
-        location: 'Salón de Fiestas'
+        time: '11:00 PM',
+        title: 'Fiesta',
+        location: 'Salón Terraza Acacia'
     },
     {
-        time: '4:00 PM',
-        title: 'Fin del Evento',
-        location: 'Salón de Fiestas'
+        time: '01:00 AM',
+        title: 'Fin del evento',
+        location: 'Salón Terraza Acacia'
     }
 ]
 
