@@ -7,34 +7,36 @@ import bolaDisco from '@/assets/images/bola-disco-2.png'
 
 const itineraryItems = [
     {
-        time: '01:00 PM',
-        title: 'Ceremonia Religiosa',
-        location: 'Parroquia de Nuestra Señora del Carmen'
-    },
-    {
-        time: '03:00 PM',
-        title: 'Reconocimientos',
-        location: 'Show Business Center'
-    },
-    {
-        time: '08:00 PM',
+        time: '09:00 PM',
         title: 'Recepción',
-        location: 'Salón Terraza Acacia'
     },
     {
-        time: '10:00 PM',
+        time: '09:00 a 10:00 PM',
+        title: 'Coctél de Bienvenida',
+    },
+    {
+        time: '10:30 PM',
         title: 'Cena',
-        location: 'Salón Terraza Acacia'
     },
     {
         time: '11:00 PM',
-        title: 'Fiesta',
-        location: 'Salón Terraza Acacia'
+        title: 'Pase de lista. Palabras para los graduados',
     },
     {
-        time: '01:00 AM',
+        time: '11:15 PM',
+        title: 'Brindis y apertura de pista',
+    },
+    {
+        time: '12:00 AM',
+        title: 'Cabina de fotos',
+    },
+    {
+        time: '01:00 a 02:00 AM',
+        title: 'Música Banda',
+    },
+    {
+        time: '02:00 AM',
         title: 'Fin del evento',
-        location: 'Salón Terraza Acacia'
     }
 ]
 
@@ -64,7 +66,6 @@ export const Itinerary: React.FC = () => {
                                     <li key={index} className="itinerary__item">
                                         <div className="itinerary__time">{item.time}</div>
                                         <div className="itinerary__title">{item.title}</div>
-                                        <div className="itinerary__location">{item.location}</div>
                                     </li>
                                 ))
                             }
