@@ -3,8 +3,13 @@ import './_guest.scss'
 import frame from '@/assets/images/guest-frame.png'
 import { SectionHeader } from '@/common/components/SectionHeader/SectionHeader'
 import { ScrollReveal } from '@/common/components/ScrollReveal/ScrollReveal'
+import { useTicket } from '@/modules/ticket/hooks/useTicket'
+import { useNavigation } from '@/common/hooks/useNavigate'
 
 export const Guest: React.FC = () => {
+    const { ticket } = useTicket()
+    const { navigateTo } = useNavigation()
+    const name = ticket?.name || 'Invitado Especial'
     return (
         <section className='guest'>
             <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={8} scale={0.97}>
@@ -22,7 +27,7 @@ export const Guest: React.FC = () => {
 
                         <div className="guest__name">
                             <p>Invitado Especial</p>
-                            <span>Saulo Román Santillán Nava</span>
+                            <span>{name}</span>
                         </div>
 
                         <p className="guest__message">
@@ -30,7 +35,11 @@ export const Guest: React.FC = () => {
                         </p>
 
                         <div className='guest__button'>
-                            <button>Ver Boletos</button>
+                            <button
+                                onClick={() => navigateTo('/ticket')}
+                            >
+                                Ver mis boletos
+                            </button>
                         </div>
 
                     </div>

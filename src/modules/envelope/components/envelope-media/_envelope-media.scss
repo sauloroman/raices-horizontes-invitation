@@ -1,0 +1,63 @@
+.envelope-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+
+    &__video {
+        position: absolute;
+        top: -2%;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    &__content {
+        height: 100%;
+        opacity: 0;
+        transform: scale(0.1) rotate(-15deg);
+        filter: blur(15px);
+        transform-origin: center center;
+        will-change: transform, opacity, filter;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-bg;
+        z-index: 2;
+        opacity: 0;
+        will-change: opacity;
+    }
+
+    &__title {
+        display: none;
+    }
+}
+
+// Animaciones al abrir el sobre (cuando el contenedor se vuelve visible)
+.envelop__hero-container--visible {
+    .envelope-media {
+        &__content {
+            animation:
+                cosmicEntrance 2.8s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                cosmicFloat 6s ease-in-out infinite 2.8s;
+            animation-delay: 0.2s;
+        }
+
+        &__overlay {
+            animation: overlayFadeIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    }
+}

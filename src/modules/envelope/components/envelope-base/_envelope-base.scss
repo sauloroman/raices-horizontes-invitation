@@ -2,8 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100Dvh;
-  width: 100dvw;
+  min-height: 100dvh;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  padding: 0 !important;
+  margin: 0 !important;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
@@ -98,7 +101,9 @@
 
 .envelop {
   position: relative;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-shrink: 0 !important;
   height: 840px;
   max-height: 100dvh;
   overflow: hidden;
@@ -109,12 +114,17 @@
   align-items: center;
   z-index: 1;
 
-  background: linear-gradient(135deg, $color-primary-600 0%, darken($color-primary-600, 5%) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.45),
-    inset 0 0 20px rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #b4b799 0%, #a8ab8c 100%);
+
+  @media (min-width: 768px) {
+    width: 100% !important;
+    max-width: 420px !important;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+      0 30px 70px rgba(0, 0, 0, 0.45),
+      inset 0 0 20px rgba(255, 255, 255, 0.2);
+  }
 
   &::before {
     content: '';
@@ -232,21 +242,21 @@
     &:active {
       transform: translateY(0) scale(0.98);
     }
+  }
 
-    &__tap-to-open {
-      position: absolute;
-      bottom: 8%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Playfair Display SC', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 4px;
-      color: rgba(#f3e7c4, 0.75);
-      z-index: 6;
-      pointer-events: none;
-      animation: pulseText 2.5s infinite ease-in-out;
-    }
+  &__tap-to-open {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: rgba(#353b26, 0.85);
+    z-index: 6;
+    pointer-events: none;
+    animation: pulseText 2.5s infinite ease-in-out;
   }
 }
 
@@ -273,7 +283,7 @@
   50% {
     opacity: 0.9;
     transform: translateX(-50%) scale(1.04);
-    text-shadow: 0 0 10px rgba(#f3e7c4, 0.3);
+    text-shadow: 0 0 10px rgba(#353b26, 0.3);
   }
 
   100% {

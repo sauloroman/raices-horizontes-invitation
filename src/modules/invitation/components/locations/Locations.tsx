@@ -55,11 +55,9 @@ export const Locations: React.FC = () => {
         <section className='locations'>
             <div className='locations__container'>
 
-                <ScrollReveal direction="none" scale={0.8} duration={1.8} delay={0.1} blur={8}>
-                    <div className="locations__image">
-                        <img src={icon} alt="Bola Disco Plateada" />
-                    </div>
-                </ScrollReveal>
+                <div className="locations__image">
+                    <img src={icon} alt="Bola Disco Plateada" />
+                </div>
 
                 <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={5}>
                     <div className="locations__header">

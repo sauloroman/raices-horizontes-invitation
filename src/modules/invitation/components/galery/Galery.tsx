@@ -16,11 +16,9 @@ export const Galery: React.FC = () => {
         <section className='galery'>
             <div className="galery__container">
 
-                <ScrollReveal direction="none" scale={0.9} duration={1.8} delay={0.1} blur={10}>
-                    <div className="galery__line">
-                        <img src={line} alt="Line Disk Balls" />
-                    </div>
-                </ScrollReveal>
+                <div className="galery__line">
+                    <img src={line} alt="Line Disk Balls" />
+                </div>
 
                 <ScrollReveal direction="up" duration={1.6} delay={0.2} blur={5}>
                     <div className="galery__header">
@@ -37,30 +35,22 @@ export const Galery: React.FC = () => {
                     </div>
                 </ScrollReveal>
 
-                <ScrollReveal direction="left" duration={1.6} delay={0.2} blur={8} rotate={-3}>
-                    <div className="galery__item galery__item--1">
-                        <div className="galery__item-cover"></div>
-                        <img src={photo1} alt="Foto 1 de generación" />
-                    </div>
-                </ScrollReveal>
+                <div className="galery__item galery__item--1">
+                    <div className="galery__item-cover"></div>
+                    <img src={photo1} alt="Foto 1 de generación" />
+                </div>
 
-                <ScrollReveal direction="right" duration={1.6} delay={0.3} blur={8} rotate={3}>
-                    <div className="galery__item galery__item--2">
-                        <img src={photo2} alt="Foto 1 de generación" />
-                    </div>
-                </ScrollReveal>
+                <div className="galery__item galery__item--2">
+                    <img src={photo2} alt="Foto 1 de generación" />
+                </div>
 
-                <ScrollReveal direction="left" duration={1.6} delay={0.2} blur={8} rotate={-3}>
-                    <div className="galery__item galery__item--3">
-                        <img src={photo3} alt="Foto 1 de generación" />
-                    </div>
-                </ScrollReveal>
+                <div className="galery__item galery__item--3">
+                    <img src={photo3} alt="Foto 1 de generación" />
+                </div>
 
-                <ScrollReveal direction="right" duration={1.6} delay={0.3} blur={8} rotate={3}>
-                    <div className="galery__item galery__item--4">
-                        <img src={photo4} alt="Foto 1 de generación" />
-                    </div>
-                </ScrollReveal>
+                <div className="galery__item galery__item--4">
+                    <img src={photo4} alt="Foto 1 de generación" />
+                </div>
 
                 <ScrollReveal direction="up" duration={1.6} delay={0.4} blur={8}>
                     <footer className="galery__footer">

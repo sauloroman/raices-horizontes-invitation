@@ -1,0 +1,1 @@
+export { Search } from './views/Search'

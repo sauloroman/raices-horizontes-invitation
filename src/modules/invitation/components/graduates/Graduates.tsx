@@ -9,11 +9,9 @@ import bulbs from '@/assets/images/tendido.png'
 export const Graduates: React.FC = () => {
     return (
         <section className='graduates'>
-            <ScrollReveal direction="none" scale={0.9} duration={1.8} delay={0.2} blur={8}>
-                <div className="graduates__badge">
-                    <img src={badge} alt="Insignia de los graduados" />
-                </div>
-            </ScrollReveal>
+            <div className="graduates__badge">
+                <img src={badge} alt="Insignia de los graduados" />
+            </div>
 
             <div className="graduates__main">
                 <ScrollReveal direction="up" duration={1.6} delay={0.4} blur={8} scale={0.97}>
@@ -39,11 +37,9 @@ export const Graduates: React.FC = () => {
                         </div>
                     </div>
                 </ScrollReveal>
-                <ScrollReveal direction="up" delay={0.6} duration={1.6} blur={5}>
-                    <div className="graduates__image">
-                        <img src={bulbs} alt="Golden Holding Light Bulbs" />
-                    </div>
-                </ScrollReveal>
+                <div className="graduates__image">
+                    <img src={bulbs} alt="Golden Holding Light Bulbs" />
+                </div>
             </div>
         </section >
     )

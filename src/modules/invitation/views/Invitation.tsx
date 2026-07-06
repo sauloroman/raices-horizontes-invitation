@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import {
     Guest,
     Hero,
@@ -14,6 +15,30 @@ import {
 } from '..'
 
 export const Invitation: React.FC = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        const hash = location.hash || location.state?.scrollTo
+        if (hash) {
+            const targetId = hash.replace('#', '')
+            const scrollTimeout = setTimeout(() => {
+                const element = document.getElementById(targetId)
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' })
+                    
+                    const navigateTimeout = setTimeout(() => {
+                        navigate(location.pathname, { replace: true, state: {} })
+                    }, 1000)
+
+                    return () => clearTimeout(navigateTimeout)
+                }
+            }, 500)
+
+            return () => clearTimeout(scrollTimeout)
+        }
+    }, [location, navigate])
+
     return (
         <div>
             <div id="invitation">

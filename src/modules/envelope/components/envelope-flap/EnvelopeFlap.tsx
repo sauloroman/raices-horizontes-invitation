@@ -8,20 +8,18 @@ export interface EnvelopeFlapProps {
 
 const SvgDefs: React.FC = () => (
     <defs>
-        {/* Premium silver gradient for borders */}
-        <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#d1d5db" />
-            <stop offset="25%" stopColor="#f9fafb" />
-            <stop offset="50%" stopColor="#9ca3af" />
-            <stop offset="75%" stopColor="#f3f4f6" />
-            <stop offset="100%" stopColor="#4b5563" />
+        {/* Premium dark olive gradient for borders */}
+        <linearGradient id="dark-olive-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#353b26" />
+            <stop offset="50%" stopColor="#4f563b" />
+            <stop offset="100%" stopColor="#25291a" />
         </linearGradient>
 
-        {/* Academic laurel watermark pattern (light white-on-green overlay) */}
+        {/* Academic laurel watermark pattern (light dark-on-sage overlay) */}
         <pattern id="laurel-pattern" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
-            <path d="M 10 30 Q 30 30, 50 10" stroke="rgba(255, 255, 255, 0.04)" strokeWidth="1.5" fill="none" />
-            <path d="M 25 28 C 22 20, 32 15, 35 23 C 38 30, 28 35, 25 28 Z" fill="rgba(255, 255, 255, 0.04)" />
-            <path d="M 38 20 C 35 12, 45 7, 48 15 C 51 22, 41 27, 38 20 Z" fill="rgba(255, 255, 255, 0.04)" />
+            <path d="M 10 30 Q 30 30, 50 10" stroke="rgba(53, 59, 38, 0.07)" strokeWidth="1.5" fill="none" />
+            <path d="M 25 28 C 22 20, 32 15, 35 23 C 38 30, 28 35, 25 28 Z" fill="rgba(53, 59, 38, 0.05)" />
+            <path d="M 38 20 C 35 12, 45 7, 48 15 C 51 22, 41 27, 38 20 Z" fill="rgba(53, 59, 38, 0.05)" />
         </pattern>
     </defs>
 )
@@ -33,51 +31,51 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
         switch (direction) {
             case 'top':
                 return (
-                    <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 400 400" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
                         <SvgDefs />
                         <path
-                            d="M 0 0 L 400 0 L 400 220 C 340 220, 300 320, 200 400 C 100 320, 60 220, 0 220 Z"
-                            fill="#2b4e32"
+                            d="M 0 0 L 400 0 L 400 220 C 340 220, 300 300, 200 400 C 100 300, 60 220, 0 220 Z"
+                            fill="#b4b799"
                         />
                         <path
-                            d="M 0 0 L 400 0 L 400 220 C 340 220, 300 320, 200 400 C 100 320, 60 220, 0 220 Z"
+                            d="M 0 0 L 400 0 L 400 220 C 340 220, 300 300, 200 400 C 100 300, 60 220, 0 220 Z"
                             fill="url(#laurel-pattern)"
                         />
                         <path
-                            d="M 400 220 C 340 220, 300 320, 200 400 C 100 320, 60 220, 0 220"
+                            d="M 400 220 C 340 220, 300 300, 200 400 C 100 300, 60 220, 0 220"
                             fill="none"
-                            stroke="url(#silver-grad)"
+                            stroke="url(#dark-olive-grad)"
                             strokeWidth="3.5"
                         />
                     </svg>
                 )
             case 'bottom':
                 return (
-                    <svg viewBox="0 0 400 400" width="100%" height="100%" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 400 400" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
                         <SvgDefs />
                         <path
-                            d="M 0 400 L 0 150 C 60 150, 100 80, 200 0 C 300 80, 340 150, 400 150 L 400 400 Z"
-                            fill="#2b4e32"
+                            d="M 0 400 L 0 150 C 60 150, 100 100, 200 0 C 300 100, 340 150, 400 150 L 400 400 Z"
+                            fill="#b4b799"
                         />
                         <path
-                            d="M 0 400 L 0 150 C 60 150, 100 80, 200 0 C 300 80, 340 150, 400 150 L 400 400 Z"
+                            d="M 0 400 L 0 150 C 60 150, 100 100, 200 0 C 300 100, 340 150, 400 150 L 400 400 Z"
                             fill="url(#laurel-pattern)"
                         />
                         <path
-                            d="M 0 150 C 60 150, 100 80, 200 0 C 300 80, 340 150, 400 150"
+                            d="M 0 150 C 60 150, 100 100, 200 0 C 300 100, 340 150, 400 150"
                             fill="none"
-                            stroke="url(#silver-grad)"
+                            stroke="url(#dark-olive-grad)"
                             strokeWidth="3.5"
                         />
                     </svg>
                 )
             case 'left':
                 return (
-                    <svg viewBox="0 0 400 800" width="100%" height="100%" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 400 800" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
                         <SvgDefs />
                         <path
                             d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800 Z"
-                            fill="#2b4e32"
+                            fill="#b4b799"
                         />
                         <path
                             d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800 Z"
@@ -86,18 +84,18 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                         <path
                             d="M 0 0 C 60 100, 100 300, 200 400 C 100 500, 60 700, 0 800"
                             fill="none"
-                            stroke="url(#silver-grad)"
+                            stroke="url(#dark-olive-grad)"
                             strokeWidth="3.5"
                         />
                     </svg>
                 )
             case 'right':
                 return (
-                    <svg viewBox="0 0 400 800" width="100%" height="100%" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 400 800" width="100%" height="100%" preserveAspectRatio="none" style={{ display: 'block' }}>
                         <SvgDefs />
                         <path
                             d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800 Z"
-                            fill="#2b4e32"
+                            fill="#b4b799"
                         />
                         <path
                             d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800 Z"
@@ -106,7 +104,7 @@ export const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ direction, isOpening
                         <path
                             d="M 400 0 C 340 100, 300 300, 200 400 C 300 500, 340 700, 400 800"
                             fill="none"
-                            stroke="url(#silver-grad)"
+                            stroke="url(#dark-olive-grad)"
                             strokeWidth="3.5"
                         />
                     </svg>

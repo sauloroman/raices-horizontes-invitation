@@ -42,32 +42,52 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     const initialOffset = directions[direction] || { y: distance, x: 0 }
 
+    const initial: any = { opacity: 0 }
+    const animate: any = { opacity: 1 }
+
+    if (scale !== 1) {
+        initial.scale = scale
+        animate.scale = 1
+    }
+    if (blur > 0) {
+        initial.filter = `blur(${blur}px)`
+        animate.filter = 'blur(0px)'
+    }
+    if (rotate !== 0) {
+        initial.rotate = rotate
+        animate.rotate = 0
+    }
+    if (rotateX !== 0) {
+        initial.rotateX = rotateX
+        animate.rotateX = 0
+    }
+    if (rotateY !== 0) {
+        initial.rotateY = rotateY
+        animate.rotateY = 0
+    }
+    if (skewX !== 0) {
+        initial.skewX = skewX
+        animate.skewX = 0
+    }
+    if (skewY !== 0) {
+        initial.skewY = skewY
+        animate.skewY = 0
+    }
+    if (initialOffset.x !== 0) {
+        initial.x = initialOffset.x
+        animate.x = 0
+    }
+    if (initialOffset.y !== 0) {
+        initial.y = initialOffset.y
+        animate.y = 0
+    }
+
     return (
         <motion.div
             className={className}
-            initial={{
-                opacity: 0,
-                scale,
-                filter: blur > 0 ? `blur(${blur}px)` : 'none',
-                rotate,
-                rotateX,
-                rotateY,
-                skewX,
-                skewY,
-                ...initialOffset
-            }}
-            whileInView={{
-                opacity: 1,
-                scale: 1,
-                filter: 'blur(0px)',
-                rotate: 0,
-                rotateX: 0,
-                rotateY: 0,
-                skewX: 0,
-                skewY: 0,
-                x: 0,
-                y: 0
-            }}
+            style={{ willChange: 'transform, opacity' }}
+            initial={initial}
+            whileInView={animate}
             viewport={{ once: true, amount: 0.15 }}
             transition={{
                 duration,

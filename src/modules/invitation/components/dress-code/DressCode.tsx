@@ -26,9 +26,7 @@ export const DressCode: React.FC = () => {
                     </div>
                 </div>
             </ScrollReveal>
-            <ScrollReveal direction="up" delay={0.5} duration={1.8} blur={5}>
-                <img className='dress-code__humans' src={humans} />
-            </ScrollReveal>
+            <img className='dress-code__humans' src={humans} />
         </section>
     )
 }
