@@ -44,7 +44,8 @@ export const useTicket = () => {
 
             const { data } = await instance.get<{ tickets: Ticket[] }>('tickets/event/6a4bf05d1a9663d0259e369e?limit=100')
 
-            dispatch(setAllTickets(data.tickets))
+            const rightTickets = data.tickets.filter(ticket => ticket.name !== 'Alex Carreón')
+            dispatch(setAllTickets(rightTickets))
         } catch (error: unknown) {
             if (isAxiosError(error)) {
                 toast.error(error.response?.data?.errors?.[0] ?? 'Ocurrió un error. Intenta de nuevo.')
