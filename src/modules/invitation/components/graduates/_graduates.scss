@@ -29,7 +29,7 @@
     }
 
     &__line {
-        @include line(5rem, $color-primary-600, false);
+        @include line(3rem, $color-primary-600, false);
     }
 
     &__main {
