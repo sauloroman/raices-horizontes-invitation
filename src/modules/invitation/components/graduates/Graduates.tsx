@@ -3,10 +3,15 @@ import './_graduates.scss'
 import { ScrollReveal } from '@/common/components/ScrollReveal/ScrollReveal'
 
 import badge from '@/assets/images/badge.png'
-import { List, GraduationCapIcon } from '@phosphor-icons/react'
+import { GraduationCapIcon } from '@phosphor-icons/react'
 import bulbs from '@/assets/images/tendido.png'
+import { useModal } from '@/common/hooks/useModal'
+import { MODAL_NAMES } from '@/store/ui/modal.slice'
 
 export const Graduates: React.FC = () => {
+
+    const { actions: { openModal } } = useModal()
+
     return (
         <section className='graduates'>
             <div className="graduates__badge">
@@ -29,8 +34,7 @@ export const Graduates: React.FC = () => {
                             <p className="graduates__text">El camino hacia la excelencia es largo y lleno de desafíos,pero hoy hemos alcanzado uno de nuestros más grandes sueños.</p>
 
                             <div className='graduates__button'>
-                                <button>
-                                    <List size={24} weight="thin" />
+                                <button onClick={() => openModal('Los Graduados', MODAL_NAMES.graduates)}>
                                     Ver Graduados
                                 </button>
                             </div>

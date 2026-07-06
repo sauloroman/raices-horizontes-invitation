@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 export const MODAL_NAMES = {
     none: 'none',
-    presents: 'presents',
+    graduates: 'graduates',
     ticket: 'ticket'
 } as const
 

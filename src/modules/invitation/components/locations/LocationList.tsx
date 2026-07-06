@@ -44,7 +44,6 @@ export const LocationList: React.FC<Props> = ({ items }) => {
                     </div>
                     <div className='locations__item-button'>
                         <button onClick={() => openExternalLink(item.urlMaps)}>
-                            <MapPin size={24} weight="thin" />
                             Ver Ubicación
                         </button>
                     </div>

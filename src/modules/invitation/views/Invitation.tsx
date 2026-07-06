@@ -13,10 +13,12 @@ import {
     Graduates,
     Farewell
 } from '..'
+import { useTicket } from '@/modules/ticket/hooks/useTicket'
 
 export const Invitation: React.FC = () => {
     const location = useLocation()
     const navigate = useNavigate()
+    const { onGetAllTickets } = useTicket()
 
     useEffect(() => {
         const hash = location.hash || location.state?.scrollTo
@@ -26,7 +28,7 @@ export const Invitation: React.FC = () => {
                 const element = document.getElementById(targetId)
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' })
-                    
+
                     const navigateTimeout = setTimeout(() => {
                         navigate(location.pathname, { replace: true, state: {} })
                     }, 1000)
@@ -38,6 +40,10 @@ export const Invitation: React.FC = () => {
             return () => clearTimeout(scrollTimeout)
         }
     }, [location, navigate])
+
+    useEffect(() => {
+        onGetAllTickets()
+    }, [onGetAllTickets])
 
     return (
         <div>

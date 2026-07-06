@@ -3,7 +3,7 @@ import { isAxiosError } from "axios";
 import { toast } from "sonner";
 
 import type { RootState } from "@/store";
-import { setIsLoading, setTicket } from "@/store/ticket/ticket.slice";
+import { setAllTickets, setIsLoading, setTicket } from "@/store/ticket/ticket.slice";
 
 import type { Ticket } from "@/common/config/interfaces/ticket.interface";
 import { instance } from "@/common/config/plugin/http.plugin";
@@ -14,7 +14,7 @@ import { closeModal } from "@/store/ui/modal.slice";
 export const useTicket = () => {
 
     const dispatch = useDispatch();
-    const { error, isLoading, ticket } = useSelector((state: RootState) => state.ticket)
+    const { error, isLoading, ticket, allTickets } = useSelector((state: RootState) => state.ticket)
 
     const onGetTicket = useCallback(async (keyPass: string) => {
         try {
@@ -32,6 +32,22 @@ export const useTicket = () => {
                 } else {
                     toast.error(error.response?.data?.errors?.[0] ?? 'Ocurrió un error. Intenta de nuevo.')
                 }
+            }
+        } finally {
+            dispatch(setIsLoading(false))
+        }
+    }, [dispatch])
+
+    const onGetAllTickets = useCallback(async () => {
+        try {
+            dispatch(setIsLoading(true))
+
+            const { data } = await instance.get<{ tickets: Ticket[] }>('tickets/event/6a4bf05d1a9663d0259e369e?limit=100')
+
+            dispatch(setAllTickets(data.tickets))
+        } catch (error: unknown) {
+            if (isAxiosError(error)) {
+                toast.error(error.response?.data?.errors?.[0] ?? 'Ocurrió un error. Intenta de nuevo.')
             }
         } finally {
             dispatch(setIsLoading(false))
@@ -56,8 +72,10 @@ export const useTicket = () => {
         error,
         isLoading,
         ticket,
+        allTickets,
 
         onGetTicket,
+        onGetAllTickets,
         onRemoveTicket,
         onCheckInitialData
     }

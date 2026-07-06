@@ -3,12 +3,14 @@ import type { Ticket } from "@/common/config/interfaces/ticket.interface";
 
 interface InitialState {
     ticket: Ticket | null
+    allTickets: Ticket[] | null
     isLoading: boolean
     error: string | null
 }
 
 const initialState: InitialState = {
     ticket: null,
+    allTickets: null,
     isLoading: false,
     error: null,
 }
@@ -20,6 +22,9 @@ export const ticketSlice = createSlice({
         setTicket: (state, { payload }: PayloadAction<Ticket | null>) => {
             state.ticket = payload;
         },
+        setAllTickets: (state, { payload }: PayloadAction<Ticket[]>) => {
+            state.allTickets = payload;
+        },
         setIsLoading: (state, { payload }: PayloadAction<boolean>) => {
             state.isLoading = payload;
         },
@@ -29,5 +34,5 @@ export const ticketSlice = createSlice({
     },
 });
 
-export const { setTicket, setIsLoading, setError } = ticketSlice.actions;
+export const { setTicket, setAllTickets, setIsLoading, setError } = ticketSlice.actions;
 export default ticketSlice.reducer;

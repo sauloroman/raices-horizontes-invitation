@@ -4,6 +4,7 @@
     width: 100%;
     overflow: hidden;
     background-color: #fcfbf7;
+    touch-action: pan-y;
 
     &__video-container {
         position: absolute;
@@ -14,6 +15,7 @@
         z-index: 1;
         opacity: .95;
         overflow: hidden;
+        pointer-events: none;
     }
 
     &__video {

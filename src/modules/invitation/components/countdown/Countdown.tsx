@@ -21,11 +21,9 @@ export const Countdown: React.FC = () => {
                     <Timer targetDate={VITE_INVITATION_DATE} />
                 </ScrollReveal>
 
-                <ScrollReveal direction="none" scale={0.9} duration={1.8} delay={0.6} blur={10}>
-                    <div className="countdown__image">
-                        <img src={bulbs} alt="Golden Holding Light Bulbs" />
-                    </div>
-                </ScrollReveal>
+                <div className="countdown__image">
+                    <img src={bulbs} alt="Golden Holding Light Bulbs" />
+                </div>
             </div>
         </section>
     )
