@@ -2,6 +2,7 @@ import React from 'react'
 import { TicketHeader } from '../components/TicketHeader'
 import { TicketBody } from '../components/TicketBody'
 import { TicketFooter } from '../components/TicketFooter'
+import { TicketButton } from '../components/TicketButton'
 import './_ticket.scss'
 import bg from '@/assets/images/bg-graduates.jpeg'
 import { useTicket } from '../hooks/useTicket'
@@ -24,6 +25,7 @@ export const Ticket: React.FC = () => {
                     </div>
 
                     <TicketBody ticket={ticket} />
+                    <TicketButton />
 
                     <div className="ticket__divider">
                         <div className="ticket__dashed-line"></div>

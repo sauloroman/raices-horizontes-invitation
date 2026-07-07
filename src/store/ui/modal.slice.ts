@@ -3,7 +3,8 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 export const MODAL_NAMES = {
     none: 'none',
     graduates: 'graduates',
-    ticket: 'ticket'
+    ticket: 'ticket',
+    tables: 'tables'
 } as const
 
 export type ModalName = typeof MODAL_NAMES[keyof typeof MODAL_NAMES];
