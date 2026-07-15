@@ -1,6 +1,7 @@
 .itinerary {
-    overflow: hidden;
+    overflow: clip;
     position: relative;
+    touch-action: pan-y;
 
     &__container {
         margin-top: -2rem;
@@ -77,6 +78,7 @@
     &__bola {
         position: absolute;
         z-index: 2;
+        pointer-events: none;
 
         &--plateada {
             bottom: -12%;

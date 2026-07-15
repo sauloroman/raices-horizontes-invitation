@@ -1,6 +1,7 @@
 .dress-code {
     padding: 1rem;
-    overflow: hidden;
+    overflow: clip;
+    touch-action: pan-y;
 
     &__container {
         width: 95%;

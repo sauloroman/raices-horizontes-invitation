@@ -2,6 +2,7 @@
 
     padding-top: 0;
     text-align: center;
+    touch-action: pan-y;
 
     &__image {
         img {

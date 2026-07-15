@@ -7,6 +7,12 @@
     margin: 0;
     box-sizing: border-box;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix scroll en móvil/tablet: permite pan vertical en toda la página */
+html, body, #root {
+    touch-action: pan-y;
 }
 
 html {
@@ -49,6 +55,11 @@ img {
     max-width: 100%;
     object-fit: cover;
     height: auto;
+    /* Las imágenes no deben interceptar eventos táctiles por defecto */
+    pointer-events: none;
+    /* Evita que el drag de imagen nativo de iOS bloquee el scroll */
+    -webkit-user-drag: none;
+    touch-action: pan-y;
 }
 
 ul,
@@ -60,6 +71,8 @@ dl {
 #invitation {
     width: 100%;
     max-width: 100vw;
-    overflow-x: hidden;
+    /* clip no crea scroll context como hidden, evita el scroll trap en iOS */
+    overflow-x: clip;
     position: relative;
+    touch-action: pan-y;
 }
